@@ -51,3 +51,30 @@ A continuación se detalla un ejemplo para leer un archivo y crear JsonObject. L
 Para Question se utilizó una clase Kotlin que tiene las variables de instancia necesarias para modelar las preguntas con sus opciones y la respuesta correcta.
 
 Se carga además en ideas un TXT con los distintos JSON por categoría.
+
+override fun onCreate(savedInstanceState: Bundle ?) {
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_main)
+  LoadQuestionsFromJSON()
+private fun loadQuestionsFromJSONO {
+// Leer el archivo JSON como una cadena
+val inputStream: InputStream = assets.open(fileName: "questions.json")
+val size = inputStream.available)
+val buffer = ByteArray(size)
+    inputStream.read(buffer) |
+      inputStream.close()
+val text = String(buffer, Charsets.UTF_8)
+// Convertir la cadena JSON en un JSONArray
+val JsonArray = JSONArray(text) |
+// Iterar sobre el JSONArray para obtener las preguntas y respuestas
+for (1 in 0s..s JsonArray.length() - 1) {
+val jsonObject = jsonArray - getJS0NObject(1)
+val question = jsonObject.getString(name: "question")
+val optionsArray = json0bject.getJSONArray(name: "options")
+val options = ArrayList < String›()
+      for (j in 0s..s optionsArray.length() - 1) {
+        options.add(optionsArray - getString(j))
+val correctAnswerIndex = json0bject.getInt(name: "correctAnswerIndex")
+// Crear un objeto Question y agregarlo a la lista
+val q = Question(question, options, correctAnswer Index)
+        questionList.add(q)
