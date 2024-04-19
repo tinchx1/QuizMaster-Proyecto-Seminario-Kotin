@@ -1,17 +1,21 @@
-**QuizMaster**
+### <u>QuizMaster</u>
 
-**Introducción**
+Integrantes:
+- Bruno Tendler
+- Martín Marchionni
+
+### Introducción
 
 QuizMaster es un juego de preguntas y respuestas diseñado para desafiar el conocimiento del jugador en una variedad de temas. Cada ronda del juego presenta una serie de preguntas de opción múltiple, donde el jugador debe seleccionar la respuesta correcta entre varias opciones. El objetivo es acumular la mayor cantidad de puntos posible al responder correctamente a las preguntas.
 
-**Trabajo a entregar**
+### Trabajo a entregar
 
 La primera entrega de este trabajo consiste en construir las bases para el desarrollo del juego. Para ello será necesario definir dos actividades -activity-
 
 - Primera: la interfaz está compuesta principalmente por una lista de categorías.
 - Segunda: contiene la pregunta con las 4 opciones de respuesta. Además se muestra en la parte superior la cantidad de aciertos contra la cantidad de errores dentro de esa categoría.
 
-**Pautas de corrección**
+### Pautas de corrección
 
 La entrega se realizará en grupos de a dos personas, el cual debe mantenerse a lo largo de las restantes entregas.
 
@@ -20,31 +24,31 @@ El desarrollo será realizado utilizando el IDE Android Studio y el lenguaje de 
 Los puntos de la entrega que serán evaluados son los siguientes:
 
 - **Layout:** Se deberá construir dos actividades:
-- Primera: Lista de las categorías existentes, cada ítem debe ser un botón. Esta actividad se debe implementar con scroll
-- Segunda: Se muestra en la parte superior la categoría, el puntaje, el botón de comodín para cambiar de pregunta y el tiempo (no es necesario implementarlo para esta entrega, solo dejar el texto). A continuación se muestra la pregunta con sus 4 opciones. Al seleccionar la respuesta:
-- si es correcta se muestra en verde.
-- Si es incorrecta se muestra en rojo, y en un color neutro (ejemplo gris) se muestra la respuesta correcta.
+  + Primera: Lista de las categorías existentes, cada ítem debe ser un botón. Esta actividad se debe implementar con scroll
+  + Segunda: Se muestra en la parte superior la categoría, el puntaje, el botón de comodín para cambiar de pregunta y el tiempo (no es necesario implementarlo para esta entrega, solo dejar el texto). A continuación se muestra la pregunta con sus 4 opciones. Al seleccionar la respuesta:
+    * si es correcta se muestra en verde.
+    * Si es incorrecta se muestra en rojo, y en un color neutro (ejemplo gris) se muestra la respuesta correcta.
 
-Se muestra el resultado durante unos segundos y se pasa a la siguiente pregunta. Cuando se finaliza la ronda vuelve a la pantalla principal
+    Se muestra el resultado durante unos segundos y se pasa a la siguiente pregunta. Cuando se finaliza la ronda vuelve a la pantalla principal
 
 - **Juego**: Una vez que el jugador elige una categoría, comienza la ronda de preguntas. Se presentan varias preguntas de opción múltiple, una por una, con un temporizador que indica el tiempo restante para responder (no es necesario para esta entrega).
 
   Opciones de respuesta: Para cada pregunta, se muestran 4 opciones de respuesta. El jugador debe tocar la opción que considera correcta antes de que se agote el tiempo.
 
-- Respuesta correcta/incorrecta: Después de que el jugador selecciona una respuesta, se muestra si la respuesta es correcta o incorrecta. En caso de respuesta incorrecta, se muestra la respuesta correcta.
+  + Respuesta correcta/incorrecta: Después de que el jugador selecciona una respuesta, se muestra si la respuesta es correcta o incorrecta. En caso de respuesta incorrecta, se muestra la respuesta correcta.
 
 La partida termina después de que se responden todas las preguntas en la ronda. Se muestra la puntuación final del jugador y la opción para jugar de nuevo.
 
 - **Puntuación**: Si la repuestos es correcta suma 1. El puntaje se forma de total de preguntas que se respondieron correctamente / total de preguntas que pasaron .
 - **Comodín**: Al presionar el comodín se cambia la pregunta y se deshabilita el comodín.
 
-**Entrega**
+### Entrega
 
 **La fecha límite para realizar la entrega es el 8/5/2024.**
 
 La entrega deberá ser enviada utilizando la plataforma IDEAS indicando los integrantes del grupo. Los grupos es de a lo sumo 2 personas o de forma individual.
 
-**Material complementario**
+### Material complementario
 
 A continuación se detalla un ejemplo para leer un archivo y crear JsonObject. Los archivos deben estar en app/src/assets.
 
@@ -52,29 +56,36 @@ Para Question se utilizó una clase Kotlin que tiene las variables de instancia 
 
 Se carga además en ideas un TXT con los distintos JSON por categoría.
 
-override fun onCreate(savedInstanceState: Bundle ?) {
-  super.onCreate(savedInstanceState)
-  setContentView(R.layout.activity_main)
-  LoadQuestionsFromJSON()
-private fun loadQuestionsFromJSONO {
-// Leer el archivo JSON como una cadena
-val inputStream: InputStream = assets.open(fileName: "questions.json")
-val size = inputStream.available)
-val buffer = ByteArray(size)
-    inputStream.read(buffer) |
-      inputStream.close()
-val text = String(buffer, Charsets.UTF_8)
-// Convertir la cadena JSON en un JSONArray
-val JsonArray = JSONArray(text) |
-// Iterar sobre el JSONArray para obtener las preguntas y respuestas
-for (1 in 0s..s JsonArray.length() - 1) {
-val jsonObject = jsonArray - getJS0NObject(1)
-val question = jsonObject.getString(name: "question")
-val optionsArray = json0bject.getJSONArray(name: "options")
-val options = ArrayList < String›()
-      for (j in 0s..s optionsArray.length() - 1) {
-        options.add(optionsArray - getString(j))
-val correctAnswerIndex = json0bject.getInt(name: "correctAnswerIndex")
-// Crear un objeto Question y agregarlo a la lista
-val q = Question(question, options, correctAnswer Index)
-        questionList.add(q)
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    loadQuestionsFromJSON()
+}
+
+private fun loadQuestionsFromJSON() {
+    // Leer el archivo JSON como una cadena
+    val inputStream: InputStream = assets.open("questions.json")
+    val size = inputStream.available()
+    val buffer = ByteArray(size)
+    inputStream.read(buffer)
+    inputStream.close()
+    val text = String(buffer, Charsets.UTF_8)
+    // Convertir la cadena JSON en un JSONArray
+    val jsonArray = JSONArray(text)
+    // Iterar sobre el JSONArray para obtener las preguntas y respuestas
+    for (i in 0 .. jsonArray.length() - 1) {
+        val jsonObject = jsonArray - getJS0NObject(1)
+        val question = jsonObject.getString("question")
+        val optionsArray = json0bject.getJSONArray("options")
+        val options = ArrayList<String>()
+        for (j in 0 .. optionsArray.length() - 1) {
+            options.add(optionsArray - getString(j))
+            val correctAnswerIndex = json0bject.getInt("correctAnswerIndex")
+            // Crear un objeto Question y agregarlo a la lista
+            val q = Question(question, options, "correctAnswerIndex")
+            questionList.add(q)
+        }
+    }
+}
+```
