@@ -4,16 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="15dp"
         android:id="@+id/texto_categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Categoria"
-        android:textSize="60dp"
+        android:textSize="60sp"
         android:layout_centerHorizontal="true"/>
     <LinearLayout
-        android:layout_marginBottom="15dp"
         android:id="@+id/linear_funcionalidades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,61 +21,66 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Comodin"
+            android:text="Comodín"
             android:layout_marginRight="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30s"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/texto_pregunta"
+            android:layout_below="@id/linear_funcionalidades"
+            android:layout_above="@id/linear_opciones"
+            android:layout_centerHorizontal="true"
+            android:text="¿Pregunta?"
+            android:textSize="30sp"
+            android:gravity="center"/>
     <LinearLayout
         android:paddingHorizontal="50dp"
-        android:layout_below="@id/linear_funcionalidades"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/linear_opciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Pregunta?"
-            android:textSize="40dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30dp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcion"
             android:layout_marginBottom="20dp"
             android:id="@+id/opcion1"
-            android:padding="15dp"
-            android:textSize="20dp"/>
+            android:paddingVertical="15dp"
+            android:textSize="20sp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcion"
             android:layout_marginBottom="20dp"
             android:id="@+id/opcion2"
-            android:padding="15dp"
-            android:textSize="20dp"/>
+            android:paddingVertical="15dp"
+            android:textSize="20sp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcion"
             android:layout_marginBottom="20dp"
             android:id="@+id/opcion3"
-            android:padding="15dp"
-            android:textSize="20dp"
+            android:paddingVertical="15dp"
+            android:textSize="20sp"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="opcion"
             android:id="@+id/opcion4"
-            android:padding="15dp"
-            android:textSize="20dp"
+            android:paddingVertical="15dp"
+            android:textSize="20sp"
             />
     </LinearLayout>
 </RelativeLayout>
