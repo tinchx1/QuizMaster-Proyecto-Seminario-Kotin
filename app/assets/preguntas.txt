@@ -1,0 +1,388 @@
+Ciencia:
+
+[
+  {
+    "question": "¿Cuál es el proceso mediante el cual las plantas convierten la luz solar en energía?",
+    "options": ["Fotomorfogénesis", "Fotosíntesis", "Transpiración", "Respiración celular"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Cuál es el elemento químico más abundante en la corteza terrestre?",
+    "options": ["Hierro", "Aluminio", "Silicio", "Oxígeno"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué tipo de célula es responsable de transportar oxígeno en el torrente sanguíneo?",
+    "options": ["Glóbulo blanco", "Plaqueta", "Glóbulo rojo", "Célula madre"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es la unidad básica de la herencia genética?",
+    "options": ["Alelo", "Cromosoma", "Genoma", "Gen"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué fenómeno natural es medido en la escala de Richter?",
+    "options": ["Tsunami", "Huracán", "Terremotos", "Tornado"],
+    "correctAnswerIndex": 2
+  }
+]
+
+Historia
+
+[
+  {
+    "question": "¿Qué líder político fue conocido como 'El Canciller de Hierro'?",
+    "options": ["Bismarck", "Mussolini", "Stalin", "Churchill"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "¿Cuál fue la capital del Imperio Romano de Occidente?",
+    "options": ["Constantinopla", "Roma", "Atenas", "Alejandría"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Qué evento histórico marcó el fin de la Segunda Guerra Mundial en Europa?",
+    "options": ["El bombardeo de Pearl Harbor", "El desembarco de Normandía", "La rendición de Alemania", "La bomba atómica en Hiroshima"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál fue la primera civilización conocida de la historia?",
+    "options": ["Egipcia", "Babilónica", "Sumeria", "China"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué país construyó y utilizó el primer sistema ferroviario a gran escala?",
+    "options": ["Estados Unidos", "Alemania", "Francia", "Reino Unido"],
+    "correctAnswerIndex": 3
+  }
+]
+
+Geografia:
+
+[
+  {
+    "question": "¿Cuál es el río más largo del mundo?",
+    "options": ["Nilo", "Amazonas", "Yangtsé", "Misisipi"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Cuál es el país más grande por área terrestre?",
+    "options": ["China", "Estados Unidos", "Canadá", "Rusia"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué continente es conocido como 'El Viejo Continente'?",
+    "options": ["América", "Asia", "África", "Europa"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Cuál es la montaña más alta del mundo?",
+    "options": ["Monte Everest", "Monte Kilimanjaro", "Monte K2", "Monte Aconcagua"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "¿Cuál es el país más pequeño del mundo en términos de área terrestre?",
+    "options": ["Mónaco", "San Marino", "El Vaticano", "Nauru"],
+    "correctAnswerIndex": 2
+  }
+]
+
+Deporte:
+
+[
+  {
+    "question": "¿Cuál es el deporte más popular en Brasil?",
+    "options": ["Baloncesto", "Voleibol", "Fútbol", "Tenis"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuántos jugadores hay en un equipo de baloncesto durante un juego?",
+    "options": ["Cuatro", "Seis", "Cinco", "Siete"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué equipo ha ganado más títulos de la NBA en la historia?",
+    "options": ["Chicago Bulls", "Los Angeles Lakers", "Boston Celtics", "Golden State Warriors"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿En qué país se originó el deporte del rugby?",
+    "options": ["Nueva Zelanda", "Australia", "Sudáfrica", "Reino Unido"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Cuál es el único deporte que se ha jugado en la Luna?",
+    "options": ["Fútbol", "Tenis", "Golf", "Baloncesto"],
+    "correctAnswerIndex": 2
+  }
+]
+
+Entretenimiento:
+
+[
+  {
+    "question": "¿Cuál es el nombre del actor que interpreta a Iron Man en el Universo Cinematográfico de Marvel?",
+    "options": ["Chris Hemsworth", "Chris Evans", "Robert Downey Jr.", "Mark Ruffalo"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué famosa franquicia cinematográfica presenta a Luke Skywalker y Darth Vader?",
+    "options": ["Star Trek", "Starship Troopers", "Star Wars", "Guardianes de la Galaxia"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es la novela más vendida de todos los tiempos?",
+    "options": ["Cien años de soledad", "El Señor de los Anillos", "Don Quijote de la Mancha", "Harry Potter y la piedra filosofal"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Quién escribió la famosa serie de libros 'Harry Potter'?",
+    "options": ["J.R.R. Tolkien", "Stephen King", "George R.R. Martin", "J.K. Rowling"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué artista pintó la Mona Lisa?",
+    "options": ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Michelangelo"],
+    "correctAnswerIndex": 2
+  }
+]
+
+Tecnologia:
+
+[
+  {
+    "question": "¿Cuál fue la primera computadora electrónica de propósito general?",
+    "options": ["Colossus", "ENIAC", "UNIVAC", "EDSAC"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Quién es considerado el fundador de Apple Inc.?",
+    "options": ["Steve Wozniak", "Bill Gates", "Steve Jobs", "Mark Zuckerberg"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué siglas representan al protocolo de transferencia de hipertexto utilizado para acceder a páginas web?",
+    "options": ["HTML", "FTP", "HTTP", "URL"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué empresa desarrolló el sistema operativo Android?",
+    "options": ["Samsung", "Apple", "Google", "Microsoft"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es el nombre del primer satélite artificial lanzado al espacio por la Unión Soviética en 1957?",
+    "options": ["Vostok 1", "Explorer 1", "Sputnik 1", "Apollo 11"],
+    "correctAnswerIndex": 2
+  }
+]
+
+Arte y cultura:
+
+[
+  {
+    "question": "¿Cuál es el nombre del planeta natal de Superman en los cómics de DC Comics?",
+    "options": ["Krypton", "Alderaan", "Tatooine", "Asgard"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "¿Qué famosa serie de libros y películas sigue las aventuras del joven mago Harry Potter?",
+    "options": ["El Señor de los Anillos", "Crepúsculo", "Harry Potter", "Cazadores de Sombras"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Quién es el autor de la serie de libros 'Canción de Hielo y Fuego', que inspiró la serie de televisión 'Juego de Tronos'?",
+    "options": ["J.R.R. Tolkien", "George R.R. Martin", "J.K. Rowling", "Stephen King"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Cuál es el nombre del famoso robot que aparece en la saga de películas 'Star Wars'?",
+    "options": ["C-3PO", "BB-8", "R2-D2", "Wall-E"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué famosa serie de televisión sigue las hazañas del Doctor, un viajero en el tiempo de la raza alienígena conocida como los Señores del Tiempo?",
+    "options": ["Stargate SG-1", "Battlestar Galactica", "Doctor Who", "The Expanse"],
+    "correctAnswerIndex": 2
+  }
+]
+
+Literatura:
+
+[
+  {
+    "question": "¿Quién escribió la novela 'Cien años de soledad'?",
+    "options": ["Julio Cortázar", "Gabriel García Márquez", "Pablo Neruda", "Isabel Allende"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Cuál es el título de la famosa obra de William Golding sobre un grupo de niños varados en una isla desierta?",
+    "options": ["El señor de las moscas", "El guardián entre el centeno", "1984", "Matar a un ruiseñor"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "¿Quién es el autor de 'La Odisea', uno de los poemas épicos más antiguos de la literatura occidental?",
+    "options": ["Virgilio", "Hesíodo", "Homero", "Esquilo"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es el nombre del detective creado por Arthur Conan Doyle, conocido por su astucia y método deductivo?",
+    "options": ["Hércules Poirot", "Nancy Drew", "Philip Marlowe", "Sherlock Holmes"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué escritor es famoso por su serie de novelas 'Crónicas vampíricas'?",
+    "options": ["Stephen King", "Anne Rice", "Bram Stoker", "Charlaine Harris"],
+    "correctAnswerIndex": 1
+  }
+]
+
+Filosofia:
+
+[
+  {
+    "question": "¿Quién fue el filósofo griego conocido como el 'padre de la filosofía occidental'?",
+    "options": ["Platón", "Aristóteles", "Sócrates", "Heráclito"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es el nombre del filósofo alemán cuyas ideas influyeron profundamente en el existencialismo y el marxismo?",
+    "options": ["Friedrich Nietzsche", "Immanuel Kant", "Georg Wilhelm Friedrich Hegel", "Karl Marx"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Quién fue el filósofo francés que propuso la teoría del contrato social en su obra 'El contrato social'?",
+    "options": ["Montesquieu", "Voltaire", "Jean-Jacques Rousseau", "Denis Diderot"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué filósofo alemán es conocido por su teoría del 'Übermensch' o 'superhombre'?",
+    "options": ["Arthur Schopenhauer", "Karl Marx", "Friedrich Nietzsche", "Martin Heidegger"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es el nombre del filósofo chino cuyas enseñanzas se recopilaron en el libro 'Analectas'?",
+    "options": ["Lao-Tsé", "Confucio", "Mencio", "Sun Tzu"],
+    "correctAnswerIndex": 1
+  }
+]
+
+Gastronomia:
+[
+  {
+    "question": "¿Cuál es el ingrediente principal del plato italiano 'carbonara'?",
+    "options": ["Tomate y albahaca", "Queso y tomate", "Huevos y panceta (o guanciale)", "Ajo y aceite de oliva"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué país es famoso por su producción y consumo de sushi?",
+    "options": ["Tailandia", "China", "Japón", "Corea del Sur"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Cuál es el nombre del postre de chocolate originario de Austria que se sirve con crema batida?",
+    "options": ["Tiramisú", "Mousse de chocolate", "Sachertorte", "Crème brûlée"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué bebida alcohólica es conocida como 'la bebida de los dioses' y se elabora a partir de la fermentación del agave?",
+    "options": ["Mezcal", "Tequila", "Vodka", "Whisky"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Qué comida mexicana consiste en tortillas de maíz rellenas de carne y luego enrolladas?",
+    "options": ["Burrito", "Tacos", "Enchiladas", "Quesadilla"],
+    "correctAnswerIndex": 1
+  }
+]
+
+Musica
+
+[
+  {
+    "question": "¿Quién es el legendario guitarrista de rock conocido como 'Dios de la Guitarra'?",
+    "options": ["Jimmy Page", "Eric Clapton", "Jimi Hendrix", "Slash"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Cuál es el álbum más vendido de todos los tiempos?",
+    "options": ["Back in Black de AC/DC", "The Dark Side of the Moon de Pink Floyd", "Thriller de Michael Jackson", "Abbey Road de The Beatles"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Quién es la voz detrás de éxitos como 'Like a Virgin' y 'Material Girl'?",
+    "options": ["Whitney Houston", "Madonna", "Celine Dion", "Britney Spears"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Qué banda de rock británica lanzó el álbum 'The Dark Side of the Moon' en 1973?",
+    "options": ["The Rolling Stones", "Led Zeppelin", "Queen", "Pink Floyd"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué género musical surgió en Jamaica a finales de la década de 1960 y se caracteriza por un ritmo distintivo llamado 'offbeat'?",
+    "options": ["Ska", "Reggae", "Dancehall", "Calypso"],
+    "correctAnswerIndex": 1
+  }
+]
+
+Idiomas:
+
+[
+  {
+    "question": "¿Cuál es el idioma oficial de Brasil?",
+    "options": ["Español", "Portugués", "Inglés", "Francés"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿En qué país se habla el idioma neerlandés?",
+    "options": ["Alemania", "Países Bajos (Holanda) y Bélgica", "Francia", "Dinamarca"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "¿Qué idioma se habla en Rusia?",
+    "options": ["Ruso", "Alemán", "Inglés", "Chino"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "¿Cuál es el idioma oficial de Japón?",
+    "options": ["Coreano", "Mandarín", "Vietnamita", "Japonés"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿En qué país se habla el idioma swahili?",
+    "options": ["Egipto", "Tanzania, Kenia y partes de otros países africanos", "Sudáfrica", "Etiopía"],
+    "correctAnswerIndex": 1
+  }
+]
+
+Medicina
+
+[
+  {
+    "question": "¿Cuál es el nombre del órgano humano más grande y pesado?",
+    "options": ["El corazón", "El hígado", "El cerebro", "La piel"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué parte del cuerpo humano se encarga de bombear sangre a través del sistema circulatorio?",
+    "options": ["El hígado", "El cerebro", "Los pulmones", "El corazón"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Qué sistema del cuerpo humano se encarga de defenderlo contra patógenos y enfermedades?",
+    "options": ["El sistema nervioso", "El sistema circulatorio", "El sistema digestivo", "El sistema inmunológico"],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "¿Cuál es la función principal del sistema respiratorio?",
+    "options": ["Producir hormonas", "Regular la temperatura corporal", "Facilitar el intercambio de gases (oxígeno y dióxido de carbono) entre el cuerpo y el aire", "Digiere los alimentos"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "¿Qué tipo de célula es conocida como la 'unidad básica de la vida'?",
+    "options": ["Célula sanguínea", "Célula nerviosa", "Célula epitelial", "La célula"],
+    "correctAnswerIndex": 3
+  }
+]
