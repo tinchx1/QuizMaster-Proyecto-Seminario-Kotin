@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun launchCategory(v: View) {
-        val i = Intent(this, preguntas::class.java)
+        val i = Intent(this, Preguntas::class.java)
         val questionsFilename = when(v.id) {
             R.id.cat_ciencia -> "ciencia.json"
             R.id.cat_historia -> "historia.json"
