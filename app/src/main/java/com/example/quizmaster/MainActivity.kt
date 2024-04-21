@@ -22,29 +22,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        findViewById<ScrollView>(R.id.linear_main).children.filter { it is Button }.forEach {
-            v -> v.setOnClickListener { launchCategory(v) }
+        findViewById<ScrollView>(R.id.linear_main).children.filter { it is Button }.forEach { v ->
+            v.setOnClickListener { launchCategory(v) }
         }
     }
 
     private fun launchCategory(v: View) {
+        val button = findViewById<Button>(v.id)
+        val textCategory = button.text.toString()
         val i = Intent(this, Preguntas::class.java)
-        val questionsFilename = when(v.id) {
-            R.id.cat_ciencia -> "ciencia.json"
-            R.id.cat_historia -> "historia.json"
-            R.id.cat_geografia -> "geografia.json"
-            R.id.cat_deporte -> "deporte.json"
-            R.id.cat_entretenimiento -> "entretenimiento.json"
-            R.id.cat_tecnologia -> "tecnologia.json"
-            R.id.cat_arte_cultura -> "arte_cultura.json"
-            R.id.cat_literatura -> "literatura.json"
-            R.id.cat_filosofia -> "filosofia.json"
-            R.id.cat_gastronomia -> "gastronomia.json"
-            R.id.cat_musica -> "musica.json"
-            R.id.cat_idiomas -> "idiomas.json"
-            else -> "medicina.json" // R.id.cat_medicina
-        }
-        i.putExtra("questionsFilename", questionsFilename)
+        i.putExtra("category", textCategory)
         startActivity(i)
     }
 }
