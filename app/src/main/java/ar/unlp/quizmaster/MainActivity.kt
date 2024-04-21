@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Para cada botón en los hijos del LinearLayout
         findViewById<ScrollView>(R.id.linear_main).children.filter { it is Button }.forEach { v ->
             v.setOnClickListener { launchCategory(v) }
         }
