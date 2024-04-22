@@ -63,5 +63,36 @@ class Preguntas : AppCompatActivity() {
             Question(questionsJson.getJSONObject(i))
         }
     }
+
+    private fun askQuestion(q: Question) {
+        findViewById<TextView>(R.id.texto_pregunta).text = q.questionText
+        buttons.forEachIndexed { index, button -> button.text = q.options[index] }
+    }
+
+    private fun answer(button: Button) {
+
+        if(questions[questionIndex].isCorrect(button.text.toString())) {
+            button.setBackgroundColor(getColor(R.color.correct))
+            correctAnswers++
+            findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
+            Handler().postDelayed ({
+                // TODO: Revertir cambio de color a button
+                if(++questionIndex < questions.size)
+                    askQuestion(questions[questionIndex])
+                else
+                    this.finish()
+            }, 3000)
+        } else {
+            button.setBackgroundColor(getColor(R.color.incorrect))
+            val missed = buttons[questions[questionIndex].correctAnswerIndex]
+            missed.setBackgroundColor(getColor(R.color.missed))
+            Handler().postDelayed({
+                // TODO: Revertir cambio de color a button y missed
+                if(++questionIndex < questions.size)
+                    askQuestion(questions[questionIndex])
+                else
+                    this.finish()
+            }, 3000)
+        }
     }
 }
