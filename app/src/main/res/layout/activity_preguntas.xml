@@ -21,6 +21,24 @@
         android:layout_below="@id/texto_categoria"
         android:gravity="center">
 
+        <TextView
+                android:id="@+id/puntaje"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+        <TextView
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:text="/"/>
+        <TextView
+                android:id="@+id/num_preguntas"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="30s"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <TextView
@@ -57,38 +75,19 @@
         android:paddingHorizontal="50dp">
 
         <Button
-            android:id="@+id/opcion1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:paddingVertical="15dp"
-            android:text="opcion"
-            android:textSize="20sp" />
+                android:id="@+id/opcion1"
+                style="@style/Opcion" />
 
         <Button
-            android:id="@+id/opcion2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:paddingVertical="15dp"
-            android:text="opcion"
-            android:textSize="20sp" />
+                android:id="@+id/opcion2"
+                style="@style/Opcion" />
 
         <Button
-            android:id="@+id/opcion3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:paddingVertical="15dp"
-            android:text="opcion"
-            android:textSize="20sp" />
+                android:id="@+id/opcion3"
+                style="@style/Opcion" />
 
         <Button
-            android:id="@+id/opcion4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="15dp"
-            android:text="opcion"
-            android:textSize="20sp" />
+                android:id="@+id/opcion4"
+                style="@style/Opcion" />
     </LinearLayout>
 </RelativeLayout>

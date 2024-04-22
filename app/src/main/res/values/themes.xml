@@ -6,4 +6,15 @@
     </style>
 
     <style name="Theme.QuizMaster" parent="Base.Theme.QuizMaster" />
+
+    <style name="BaseOpcion">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:text">opcion</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="Opcion" parent="BaseOpcion"/>
 </resources>
