@@ -13,6 +13,7 @@
         <item name="android:layout_marginBottom">20dp</item>
         <item name="android:text">opcion</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:colorBackground">@color/primaryButton</item>
     </style>
 
     <style name="Opcion" parent="BaseOpcion"/>

@@ -70,29 +70,30 @@ class Preguntas : AppCompatActivity() {
     }
 
     private fun answer(button: Button) {
+        val correct = questions[questionIndex].isCorrect(button.text.toString())
+        val correctButton = buttons[questions[questionIndex].correctAnswerIndex]
+        val defaultColor = getColor(R.color.primaryButton)
 
-        if(questions[questionIndex].isCorrect(button.text.toString())) {
+        buttons.forEach { it.isClickable = false }
+        if(correct) {
             button.setBackgroundColor(getColor(R.color.correct))
             correctAnswers++
             findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
-            Handler().postDelayed ({
-                // TODO: Revertir cambio de color a button
-                if(++questionIndex < questions.size)
-                    askQuestion(questions[questionIndex])
-                else
-                    this.finish()
-            }, 3000)
         } else {
             button.setBackgroundColor(getColor(R.color.incorrect))
-            val missed = buttons[questions[questionIndex].correctAnswerIndex]
-            missed.setBackgroundColor(getColor(R.color.missed))
-            Handler().postDelayed({
-                // TODO: Revertir cambio de color a button y missed
-                if(++questionIndex < questions.size)
-                    askQuestion(questions[questionIndex])
-                else
-                    this.finish()
-            }, 3000)
+            correctButton.setBackgroundColor(getColor(R.color.missed))
         }
+        Handler().postDelayed({
+            button.setBackgroundColor(defaultColor)
+            if(!correct)
+                correctButton.setBackgroundColor(defaultColor)
+            if(++questionIndex < questions.size) {
+                askQuestion(questions[questionIndex])
+                buttons.forEach { it.isClickable = true }
+            }
+            else
+                this.finish()
+        }, 3000)
+
     }
 }
