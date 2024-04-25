@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.quizmaster"
+    namespace = "ar.unlp.quizmaster"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.quizmaster"
+        applicationId = "ar.unlp.quizmaster"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

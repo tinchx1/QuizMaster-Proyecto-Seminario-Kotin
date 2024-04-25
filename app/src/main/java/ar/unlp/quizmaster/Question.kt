@@ -1,4 +1,4 @@
-package com.example.quizmaster
+package ar.unlp.quizmaster
 
 import org.json.JSONObject
 
