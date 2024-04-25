@@ -32,19 +32,23 @@ class Preguntas : AppCompatActivity() {
         val category = intent.getStringExtra("category") ?: ""
         findViewById<TextView>(R.id.texto_categoria).text = category
 
-        buttons = arrayOf(findViewById(R.id.opcion1), findViewById(R.id.opcion2), findViewById(R.id.opcion3), findViewById(R.id.opcion4))
+        buttons = arrayOf(
+            findViewById(R.id.opcion1),
+            findViewById(R.id.opcion2),
+            findViewById(R.id.opcion3),
+            findViewById(R.id.opcion4))
 
         buttons.forEach { it ->
             it.setOnClickListener { answer(it as Button) }
         }
 
         questions = questionsFromJSON(category)
-        findViewById<TextView>(R.id.num_preguntas).text = questions.size.toString()
     }
 
     override fun onStart() {
         super.onStart()
         askQuestion(questions[questionIndex])
+        findViewById<TextView>(R.id.num_preguntas).text = questions.size.toString()
     }
 
 
