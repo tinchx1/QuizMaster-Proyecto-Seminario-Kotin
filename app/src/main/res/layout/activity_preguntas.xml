@@ -9,10 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Categoria"
-        android:textSize="50sp" />
+        android:textSize="40sp" />
 
     <LinearLayout
         android:id="@+id/linear_funcionalidades"
@@ -22,27 +22,30 @@
         android:gravity="center">
 
         <TextView
-                android:id="@+id/puntaje"
-                android:textSize="30sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"/>
+            android:id="@+id/puntaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30sp" />
+
         <TextView
-                android:textSize="30sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-            android:text="/"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="30sp" />
+
         <TextView
-                android:id="@+id/num_preguntas"
-                android:textSize="30sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"/>
+            android:id="@+id/num_preguntas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="30sp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:onClick="handleComodin"
             android:text="Comodín" />
 
         <TextView
@@ -61,8 +64,10 @@
         android:layout_below="@id/linear_funcionalidades"
         android:layout_centerHorizontal="true"
         android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="10dp"
         android:text="¿Pregunta?"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
     <LinearLayout
         android:id="@+id/linear_opciones"
@@ -70,9 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="40dp"
         android:orientation="vertical"
-        android:paddingHorizontal="50dp">
+        android:paddingHorizontal="30dp">
 
         <Button
             android:id="@+id/opcion1"

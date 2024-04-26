@@ -2,9 +2,10 @@ package ar.unlp.quizmaster
 
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,7 +19,7 @@ class Preguntas : AppCompatActivity() {
     private lateinit var questions: List<Question>
     private var questionIndex = 0
     private var correctAnswers = 0
-
+    private var comodinState = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -36,7 +37,8 @@ class Preguntas : AppCompatActivity() {
             findViewById(R.id.opcion1),
             findViewById(R.id.opcion2),
             findViewById(R.id.opcion3),
-            findViewById(R.id.opcion4))
+            findViewById(R.id.opcion4)
+        )
 
         buttons.forEach { it ->
             it.setOnClickListener { answer(it as Button) }
@@ -61,8 +63,6 @@ class Preguntas : AppCompatActivity() {
         val text = String(buffer, Charsets.UTF_8)
         val jsonObject = JSONObject(text)
         val questionsJson = jsonObject.getJSONArray(category)
-        Log.d("Questions", questionsJson.toString())
-
         return List(questionsJson.length()) { i ->
             Question(questionsJson.getJSONObject(i))
         }
@@ -73,13 +73,25 @@ class Preguntas : AppCompatActivity() {
         buttons.forEachIndexed { index, button -> button.text = q.options[index] }
     }
 
+    public fun handleComodin(v: View) {
+        if (((questionIndex + 1) < questions.size) && (!comodinState)) {
+            comodinState = true
+            questionIndex++
+            askQuestion(questions[questionIndex])
+        } else if (questionIndex + 1 == questions.size) {
+            Toast.makeText(this, "Es tu última pregunta", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Ya has usado el comodín", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     private fun answer(button: Button) {
         val correct = questions[questionIndex].isCorrect(button.text.toString())
         val correctButton = buttons[questions[questionIndex].correctAnswerIndex]
         val defaultColor = getColor(R.color.primaryButton)
 
         buttons.forEach { it.isClickable = false }
-        if(correct) {
+        if (correct) {
             button.setBackgroundColor(getColor(R.color.correct))
             correctAnswers++
             findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
@@ -89,13 +101,12 @@ class Preguntas : AppCompatActivity() {
         }
         Handler().postDelayed({
             button.setBackgroundColor(defaultColor)
-            if(!correct)
+            if (!correct)
                 correctButton.setBackgroundColor(defaultColor)
-            if(++questionIndex < questions.size) {
+            if (++questionIndex < questions.size) {
                 askQuestion(questions[questionIndex])
                 buttons.forEach { it.isClickable = true }
-            }
-            else
+            } else
                 this.finish()
         }, 3000)
 
