@@ -88,6 +88,7 @@ class Preguntas : AppCompatActivity() {
 
     private fun answer(button: Button) {
         val correctButton = buttons[questions[questionIndex].correctAnswerIndex]
+        val previousColorStateList = button.backgroundTintList
 
         buttons.forEach { it.isClickable = false }
 
@@ -105,7 +106,6 @@ class Preguntas : AppCompatActivity() {
         }
         Handler().postDelayed({
             // Restaurar colores
-            val previousColorStateList = button.backgroundTintList
             button.backgroundTintList = previousColorStateList
             if (!correct)
                 correctButton.backgroundTintList = previousColorStateList
