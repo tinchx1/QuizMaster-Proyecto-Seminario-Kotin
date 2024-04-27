@@ -1,5 +1,6 @@
 package ar.unlp.quizmaster
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -86,23 +87,29 @@ class Preguntas : AppCompatActivity() {
     }
 
     private fun answer(button: Button) {
-        val correct = questions[questionIndex].isCorrect(button.text.toString())
         val correctButton = buttons[questions[questionIndex].correctAnswerIndex]
-        val defaultColor = getColor(R.color.primaryButton)
 
         buttons.forEach { it.isClickable = false }
+
+        val correct = questions[questionIndex].isCorrect(button.text.toString())
         if (correct) {
-            button.setBackgroundColor(getColor(R.color.correct))
+            val correctColorStateList = ColorStateList.valueOf(getColor(R.color.correct))
+            button.backgroundTintList = correctColorStateList
             correctAnswers++
             findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
         } else {
-            button.setBackgroundColor(getColor(R.color.incorrect))
-            correctButton.setBackgroundColor(getColor(R.color.missed))
+            val incorrectColorStateList = ColorStateList.valueOf(getColor(R.color.incorrect))
+            val missedColorStateList = ColorStateList.valueOf(getColor(R.color.missed))
+            button.backgroundTintList = incorrectColorStateList
+            correctButton.backgroundTintList = missedColorStateList
         }
         Handler().postDelayed({
-            button.setBackgroundColor(defaultColor)
+            // Restaurar colores
+            val previousColorStateList = button.backgroundTintList
+            button.backgroundTintList = previousColorStateList
             if (!correct)
-                correctButton.setBackgroundColor(defaultColor)
+                correctButton.backgroundTintList = previousColorStateList
+
             if (++questionIndex < questions.size) {
                 askQuestion(questions[questionIndex])
                 buttons.forEach { it.isClickable = true }

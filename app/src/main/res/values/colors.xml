@@ -5,5 +5,4 @@
     <color name="correct">#4CAF50</color>
     <color name="incorrect">#E91E63</color>
     <color name="missed">#827717</color>
-    <color name="primaryButton">#6750A3</color>
 </resources>
