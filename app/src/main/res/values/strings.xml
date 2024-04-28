@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuizMaster</string>
+    <plurals name="correct_answers_toast">
+        <item quantity="one">¡Genial! Respondiste %d pregunta correcta.</item>
+        <item quantity="other">¡Genial! Respondiste %d preguntas correctas.</item>
+    </plurals>
 </resources>

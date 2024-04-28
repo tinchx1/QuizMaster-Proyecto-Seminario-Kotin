@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +17,7 @@ import java.io.InputStream
 
 class Preguntas : AppCompatActivity() {
 
+    private lateinit var comodin: Button
     private lateinit var options: Array<Button>
     private lateinit var questions: Array<Question>
     private var questionIndex = 0

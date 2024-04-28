@@ -2,6 +2,5 @@
 <resources>
 
     <style name="Opcion" parent="BaseOpcion">
-        <item name="android:paddingVertical">15dp</item>
     </style>
 </resources>
