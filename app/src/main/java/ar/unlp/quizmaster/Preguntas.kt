@@ -6,7 +6,6 @@ import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -51,7 +50,7 @@ class Preguntas : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         askQuestion(questions[questionIndex])
-        findViewById<TextView>(R.id.num_preguntas).text = questions.size.toString()
+        findViewById<TextView>(R.id.num_preguntas).text = (questions.size - 1).toString()
     }
 
 
@@ -75,15 +74,19 @@ class Preguntas : AppCompatActivity() {
     }
 
     public fun handleComodin(v: View) {
-        if (((questionIndex + 1) < questions.size) && (!comodinState)) {
+        if (((questionIndex + 1) < (questions.size - 1)) && (!comodinState)) {
+            val comodin = findViewById<Button>(R.id.comodin)
+            comodin.setEnabled(false)
             comodinState = true
             questionIndex++
             askQuestion(questions[questionIndex])
-        } else if (questionIndex + 1 == questions.size) {
-            Toast.makeText(this, "Es tu última pregunta", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "Ya has usado el comodín", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun nextQuestion() {
+        questionIndex++
+        askQuestion(questions[questionIndex])
+        buttons.forEach { it.isClickable = true }
     }
 
     private fun answer(button: Button) {
@@ -110,9 +113,10 @@ class Preguntas : AppCompatActivity() {
             if (!correct)
                 correctButton.backgroundTintList = previousColorStateList
 
-            if (++questionIndex < questions.size) {
-                askQuestion(questions[questionIndex])
-                buttons.forEach { it.isClickable = true }
+            if ((questionIndex + 1 < (questions.size - 1)) && (!comodinState)) {
+                nextQuestion()
+            } else if (((questionIndex + 1 < questions.size) && (comodinState))) {
+                nextQuestion()
             } else
                 this.finish()
         }, 3000)
