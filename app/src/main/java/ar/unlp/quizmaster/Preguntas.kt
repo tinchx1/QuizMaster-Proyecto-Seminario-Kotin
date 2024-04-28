@@ -6,7 +6,6 @@ import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,7 +19,6 @@ class Preguntas : AppCompatActivity() {
     private lateinit var questions: List<Question>
     private var questionIndex = 0
     private var correctAnswers = 0
-    private var comodinState = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -76,17 +74,17 @@ class Preguntas : AppCompatActivity() {
 
     public fun handleComodin(v: View) {
         val comodin = findViewById<Button>(R.id.comodin)
-        if ((questionIndex == questions.size - 1) && (!comodinState)) {
-            comodin.setEnabled(false)
-            Toast.makeText(this, "No puedes usar el comodin en este momento", Toast.LENGTH_SHORT)
-                .show()
-        } else if (!comodinState) {
-            questionIndex++
+        findViewById<TextView>(R.id.num_preguntas).text = (questions.size - 1).toString()
+        comodin.isEnabled = false
+        nextOrFinish()
+    }
+
+    private fun nextOrFinish() {
+        questionIndex++
+        if (questionIndex < questions.size)
             askQuestion(questions[questionIndex])
-            comodin.setEnabled(false)
-            comodinState = true
-            findViewById<TextView>(R.id.num_preguntas).text = (questions.size - 1).toString()
-        }
+        else
+            this.finish()
     }
 
     private fun answer(button: Button) {
@@ -112,12 +110,8 @@ class Preguntas : AppCompatActivity() {
             button.backgroundTintList = previousColorStateList
             if (!correct)
                 correctButton.backgroundTintList = previousColorStateList
-
-            if (questionIndex++ < questions.size) {
-                askQuestion(questions[questionIndex])
-                buttons.forEach { it.isClickable = true }
-            } else
-                this.finish()
+            nextOrFinish()
+            buttons.forEach { it.isClickable = true }
         }, 3000)
 
     }
