@@ -38,20 +38,39 @@ class Preguntas : AppCompatActivity() {
             findViewById(R.id.opcion3),
             findViewById(R.id.opcion4)
         )
+        comodin = findViewById(R.id.comodin)
 
         options.forEach { it ->
             it.setOnClickListener { answer(it as Button) }
         }
 
         questions = questionsFromJSON(category)
+
+        savedInstanceState?.let {
+            questionIndex = it.getInt("questionIndex")
+            correctAnswers = it.getInt("correctAnswers")
+            comodin.isEnabled = it.getBoolean("comodinState")
+        }
+
     }
 
     override fun onStart() {
         super.onStart()
+        findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
+        findViewById<TextView>(R.id.num_preguntas).text =
+            (if (comodin.isEnabled) questions.size
+            else questions.size - 1).toString()
         askQuestion(questions[questionIndex])
-        findViewById<TextView>(R.id.num_preguntas).text = questions.size.toString()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.apply {
+            putInt("questionIndex", questionIndex)
+            putInt("correctAnswers", correctAnswers)
+            putBoolean("comodinState", comodin.isEnabled)
+        }
+    }
 
     private fun questionsFromJSON(category: String): Array<Question> {
         val inputStream: InputStream = assets.open("questions.json")
