@@ -6,6 +6,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -50,7 +51,7 @@ class Preguntas : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         askQuestion(questions[questionIndex])
-        findViewById<TextView>(R.id.num_preguntas).text = (questions.size - 1).toString()
+        findViewById<TextView>(R.id.num_preguntas).text = questions.size.toString()
     }
 
 
@@ -74,19 +75,18 @@ class Preguntas : AppCompatActivity() {
     }
 
     public fun handleComodin(v: View) {
-        if (((questionIndex + 1) < (questions.size - 1)) && (!comodinState)) {
-            val comodin = findViewById<Button>(R.id.comodin)
+        val comodin = findViewById<Button>(R.id.comodin)
+        if ((questionIndex == questions.size - 1) && (!comodinState)) {
             comodin.setEnabled(false)
-            comodinState = true
+            Toast.makeText(this, "No puedes usar el comodin en este momento", Toast.LENGTH_SHORT)
+                .show()
+        } else if (!comodinState) {
             questionIndex++
             askQuestion(questions[questionIndex])
+            comodin.setEnabled(false)
+            comodinState = true
+            findViewById<TextView>(R.id.num_preguntas).text = (questions.size - 1).toString()
         }
-    }
-
-    private fun nextQuestion() {
-        questionIndex++
-        askQuestion(questions[questionIndex])
-        buttons.forEach { it.isClickable = true }
     }
 
     private fun answer(button: Button) {
@@ -113,10 +113,9 @@ class Preguntas : AppCompatActivity() {
             if (!correct)
                 correctButton.backgroundTintList = previousColorStateList
 
-            if ((questionIndex + 1 < (questions.size - 1)) && (!comodinState)) {
-                nextQuestion()
-            } else if (((questionIndex + 1 < questions.size) && (comodinState))) {
-                nextQuestion()
+            if (questionIndex++ < questions.size) {
+                askQuestion(questions[questionIndex])
+                buttons.forEach { it.isClickable = true }
             } else
                 this.finish()
         }, 3000)
