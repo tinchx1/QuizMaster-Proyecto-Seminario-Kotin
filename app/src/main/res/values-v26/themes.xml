@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Opcion" parent="BaseOpcion">
+        <item name="android:paddingVertical">15dp</item>
+    </style>
+</resources>
