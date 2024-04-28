@@ -5,13 +5,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ScrollView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.children
 
 class MainActivity : AppCompatActivity() {
+    private var activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        result -> if (result.resultCode == RESULT_OK) {
+            val correctAnswers = result.data?.getIntExtra("correctAnswers", Int.MIN_VALUE) ?: Int.MIN_VALUE
+            val text = resources.getQuantityString(R.plurals.correct_answers_toast, correctAnswers, correctAnswers)
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,6 +42,6 @@ class MainActivity : AppCompatActivity() {
         val textCategory = button.text.toString()
         val i = Intent(this, Preguntas::class.java)
         i.putExtra("category", textCategory)
-        startActivity(i)
+        activityResult.launch(i)
     }
 }

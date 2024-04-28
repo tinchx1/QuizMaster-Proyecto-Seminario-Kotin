@@ -1,5 +1,6 @@
 package ar.unlp.quizmaster
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.os.Handler
@@ -103,8 +104,11 @@ class Preguntas : AppCompatActivity() {
         questionIndex++
         if (questionIndex < questions.size)
             askQuestion(questions[questionIndex])
-        else
+        else {
+            val i = Intent().putExtra("correctAnswers", correctAnswers)
+            setResult(RESULT_OK, i)
             this.finish()
+        }
     }
 
     private fun answer(button: Button) {
