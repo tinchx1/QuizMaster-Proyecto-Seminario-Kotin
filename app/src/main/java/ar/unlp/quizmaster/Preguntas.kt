@@ -90,7 +90,10 @@ class Preguntas : AppCompatActivity() {
     private fun answer(button: Button) {
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
         val previousColorStateList = button.backgroundTintList
+        val comodin = findViewById<Button>(R.id.comodin)
+
         options.forEach { it.isClickable = false }
+        comodin.isClickable = false
 
         val correct = questions[questionIndex].isCorrect(button.text.toString())
         if (correct) {
@@ -111,6 +114,7 @@ class Preguntas : AppCompatActivity() {
                 correctButton.backgroundTintList = previousColorStateList
             nextOrFinish()
             options.forEach { it.isClickable = true }
+            comodin.isClickable = true
         }, 3000)
 
     }
