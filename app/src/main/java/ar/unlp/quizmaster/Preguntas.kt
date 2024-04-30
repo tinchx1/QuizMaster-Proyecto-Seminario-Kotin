@@ -15,8 +15,8 @@ import java.io.InputStream
 
 class Preguntas : AppCompatActivity() {
 
-    private lateinit var buttons: Array<Button>
-    private lateinit var questions: List<Question>
+    private lateinit var options: Array<Button>
+    private lateinit var questions: Array<Question>
     private var questionIndex = 0
     private var correctAnswers = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,14 +32,14 @@ class Preguntas : AppCompatActivity() {
         val category = intent.getStringExtra("category") ?: ""
         findViewById<TextView>(R.id.texto_categoria).text = category
 
-        buttons = arrayOf(
+        options = arrayOf(
             findViewById(R.id.opcion1),
             findViewById(R.id.opcion2),
             findViewById(R.id.opcion3),
             findViewById(R.id.opcion4)
         )
 
-        buttons.forEach { it ->
+        options.forEach { it ->
             it.setOnClickListener { answer(it as Button) }
         }
 
@@ -53,7 +53,7 @@ class Preguntas : AppCompatActivity() {
     }
 
 
-    private fun questionsFromJSON(category: String): List<Question> {
+    private fun questionsFromJSON(category: String): Array<Question> {
         val inputStream: InputStream = assets.open("questions.json")
         val size = inputStream.available()
         val buffer = ByteArray(size)
@@ -62,14 +62,14 @@ class Preguntas : AppCompatActivity() {
         val text = String(buffer, Charsets.UTF_8)
         val jsonObject = JSONObject(text)
         val questionsJson = jsonObject.getJSONArray(category)
-        return List(questionsJson.length()) { i ->
+        return Array(questionsJson.length()) { i ->
             Question(questionsJson.getJSONObject(i))
         }
     }
 
     private fun askQuestion(q: Question) {
         findViewById<TextView>(R.id.texto_pregunta).text = q.questionText
-        buttons.forEachIndexed { index, button -> button.text = q.options[index] }
+        options.forEachIndexed { index, button -> button.text = q.options[index] }
     }
 
     public fun handleComodin(v: View) {
@@ -88,10 +88,9 @@ class Preguntas : AppCompatActivity() {
     }
 
     private fun answer(button: Button) {
-        val correctButton = buttons[questions[questionIndex].correctAnswerIndex]
+        val correctButton = options[questions[questionIndex].correctAnswerIndex]
         val previousColorStateList = button.backgroundTintList
-
-        buttons.forEach { it.isClickable = false }
+        options.forEach { it.isClickable = false }
 
         val correct = questions[questionIndex].isCorrect(button.text.toString())
         if (correct) {
@@ -111,7 +110,7 @@ class Preguntas : AppCompatActivity() {
             if (!correct)
                 correctButton.backgroundTintList = previousColorStateList
             nextOrFinish()
-            buttons.forEach { it.isClickable = true }
+            options.forEach { it.isClickable = true }
         }, 3000)
 
     }
