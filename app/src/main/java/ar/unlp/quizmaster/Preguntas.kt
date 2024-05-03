@@ -74,7 +74,8 @@ class Preguntas : AppCompatActivity() {
 
     public fun handleComodin(v: View) {
         val comodin = findViewById<Button>(R.id.comodin)
-        findViewById<TextView>(R.id.num_preguntas).text = (questions.size - 1).toString()
+        correctAnswers++
+        findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
         comodin.isEnabled = false
         nextOrFinish()
     }
