@@ -52,6 +52,7 @@ class Preguntas : AppCompatActivity() {
 
         savedInstanceState?.let {
             questionIndex = it.getInt("questionIndex")
+            answeredQuestions = it.getInt("answeredQuestions")
             correctAnswers = it.getInt("correctAnswers")
             comodin.isEnabled = it.getBoolean("comodinState")
         }
@@ -69,6 +70,7 @@ class Preguntas : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.apply {
             putInt("questionIndex", questionIndex)
+            putInt("answeredQuestions", answeredQuestions)
             putInt("correctAnswers", correctAnswers)
             putBoolean("comodinState", comodin.isEnabled)
         }
