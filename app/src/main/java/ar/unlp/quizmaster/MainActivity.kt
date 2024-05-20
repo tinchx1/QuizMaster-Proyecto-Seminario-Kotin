@@ -12,13 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.children
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private var activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         result -> if (result.resultCode == RESULT_OK) {
             val correctAnswers = result.data?.getIntExtra("correctAnswers", Int.MIN_VALUE) ?: Int.MIN_VALUE
             val text = resources.getQuantityString(R.plurals.correct_answers_toast, correctAnswers, correctAnswers)
-            Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(R.id.main), text, Snackbar.LENGTH_LONG).show()
         }
     }
 
