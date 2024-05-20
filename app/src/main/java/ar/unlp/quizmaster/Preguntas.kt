@@ -21,6 +21,7 @@ class Preguntas : AppCompatActivity() {
     private lateinit var options: Array<Button>
     private lateinit var questions: Array<Question>
     private var questionIndex = 0
+    private var answeredQuestions = 0
     private var correctAnswers = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,9 +61,7 @@ class Preguntas : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
-        findViewById<TextView>(R.id.num_preguntas).text =
-            (if (comodin.isEnabled) questions.size
-            else questions.size - 1).toString()
+        findViewById<TextView>(R.id.num_preguntas).text = answeredQuestions.toString()
         askQuestion(questions[questionIndex])
     }
 
@@ -95,10 +94,7 @@ class Preguntas : AppCompatActivity() {
     }
 
     public fun handleComodin(v: View) {
-        val comodin = findViewById<Button>(R.id.comodin)
-        correctAnswers++
-        findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
-        comodin.isEnabled = false
+        (v as Button).isEnabled = false
         nextOrFinish()
     }
 
@@ -117,6 +113,9 @@ class Preguntas : AppCompatActivity() {
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
         val previousColorStateList = button.backgroundTintList
         val comodin = findViewById<Button>(R.id.comodin)
+
+        val numPreguntas = findViewById<TextView>(R.id.num_preguntas)
+        numPreguntas.text = (++answeredQuestions).toString()
 
         options.forEach { it.isClickable = false }
         comodin.isClickable = false
