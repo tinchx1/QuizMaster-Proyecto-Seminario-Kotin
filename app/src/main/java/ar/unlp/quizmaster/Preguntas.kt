@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,7 +17,7 @@ import java.io.InputStream
 
 class Preguntas : AppCompatActivity() {
 
-    private lateinit var comodin: Button
+    private lateinit var comodin: ImageView
     private lateinit var options: Array<Button>
     private lateinit var questions: Array<Question>
     private var questionIndex = 0
@@ -96,7 +96,8 @@ class Preguntas : AppCompatActivity() {
     }
 
     public fun handleComodin(v: View) {
-        (v as Button).isEnabled = false
+        (v as ImageView).isEnabled = false
+        comodin.setAlpha(0.5f)
         nextOrFinish()
     }
 
@@ -114,7 +115,7 @@ class Preguntas : AppCompatActivity() {
     private fun answer(button: Button) {
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
         val previousColorStateList = button.backgroundTintList
-        val comodin = findViewById<Button>(R.id.comodin)
+        val comodin = findViewById<ImageView>(R.id.comodin)
 
         val numPreguntas = findViewById<TextView>(R.id.num_preguntas)
         numPreguntas.text = (++answeredQuestions).toString()
