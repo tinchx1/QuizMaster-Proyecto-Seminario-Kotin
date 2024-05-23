@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ScrollView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +17,8 @@ class MainActivity : AppCompatActivity() {
     private var activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         result -> if (result.resultCode == RESULT_OK) {
             val correctAnswers = result.data?.getIntExtra("correctAnswers", Int.MIN_VALUE) ?: Int.MIN_VALUE
-            val text = resources.getQuantityString(R.plurals.correct_answers_toast, correctAnswers, correctAnswers)
+            val text = resources.getQuantityString(R.plurals.correct_answers_message, correctAnswers, correctAnswers) + " " +
+                if (correctAnswers > 0) getString(R.string.congrats) else getString(R.string.better_luck_next_time)
             Snackbar.make(findViewById(R.id.main), text, Snackbar.LENGTH_LONG).show()
         }
     }
