@@ -16,7 +16,6 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingVertical="25sp"
                 android:textSize="50sp"
                 android:text="QuizMaster" />
 
