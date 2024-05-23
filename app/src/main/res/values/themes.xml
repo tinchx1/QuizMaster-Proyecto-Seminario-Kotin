@@ -15,4 +15,10 @@
     </style>
 
     <style name="Opcion" parent="BaseOpcion" />
+
+    <style name="CategoryButton">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:onClick">launchCategory</item>
+    </style>
 </resources>

@@ -12,10 +12,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="185dp">
+            android:layout_toStartOf="@id/texto_categoria"
+            android:layout_alignParentStart="true"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/num_preguntas"
+                android:id="@+id/puntaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/barra"
@@ -25,12 +27,11 @@
                 android:id="@+id/barra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/texto_categoria"
                 android:text="/"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/puntaje"
+                android:id="@+id/num_preguntas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/barra"

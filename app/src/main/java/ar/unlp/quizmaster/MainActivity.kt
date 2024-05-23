@@ -32,13 +32,9 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        findViewById<ScrollView>(R.id.linear_main).children.filter { it is Button }.forEach { v ->
-            v.setOnClickListener { launchCategory(v) }
-        }
     }
 
-    private fun launchCategory(v: View) {
+    fun launchCategory(v: View) {
         val button = findViewById<Button>(v.id)
         val textCategory = button.text.toString()
         val i = Intent(this, Preguntas::class.java)
