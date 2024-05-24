@@ -1,98 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main"
-        tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30sp"
+    tools:context=".MainActivity">
 
     <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:text="QuizMaster"
+            android:textSize="50sp" />
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="50sp"
-                android:text="QuizMaster" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15sp"
+            android:text="Categorías:"
+            android:textSize="30sp" />
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15sp"
-                android:textSize="30sp"
-                android:text="Categorías:" />
-
-        <GridLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:columnCount="3">
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3">
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Ciencia"
-                    android:id="@+id/cat_ciencia" />
+                android:id="@+id/cat_ciencia"
+                style="@style/CategoryButton"
+                android:text="Ciencia" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Historia"
-                    android:id="@+id/cat_historia" />
+                android:id="@+id/cat_historia"
+                style="@style/CategoryButton"
+                android:text="Historia" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Geografía"
-                    android:id="@+id/cat_geografia" />
+                android:id="@+id/cat_geografia"
+                style="@style/CategoryButton"
+                android:text="Geografía" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Deporte"
-                    android:id="@+id/cat_deporte" />
+                android:id="@+id/cat_deporte"
+                style="@style/CategoryButton"
+                android:text="Deporte" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Entretenimiento"
-                    android:id="@+id/cat_entretenimiento" />
+                android:id="@+id/cat_entretenimiento"
+                style="@style/CategoryButton"
+                android:text="Entretenimiento" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Tecnología"
-                    android:id="@+id/cat_tecnologia" />
+                android:id="@+id/cat_tecnologia"
+                style="@style/CategoryButton"
+                android:text="Tecnología" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Arte y cultura"
-                    android:id="@+id/cat_arte_cultura" />
+                android:id="@+id/cat_arte_cultura"
+                style="@style/CategoryButton"
+                android:text="Arte y cultura" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Literatura"
-                    android:id="@+id/cat_literatura" />
+                android:id="@+id/cat_literatura"
+                style="@style/CategoryButton"
+                android:text="Literatura" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Filosofía"
-                    android:id="@+id/cat_filosofia" />
+                android:id="@+id/cat_filosofia"
+                style="@style/CategoryButton"
+                android:text="Filosofía" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Gastronomía"
-                    android:id="@+id/cat_gastronomia" />
+                android:id="@+id/cat_gastronomia"
+                style="@style/CategoryButton"
+                android:text="Gastronomía" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Música"
-                    android:id="@+id/cat_musica" />
+                android:id="@+id/cat_musica"
+                style="@style/CategoryButton"
+                android:text="Música" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Idiomas"
-                    android:id="@+id/cat_idiomas" />
+                android:id="@+id/cat_idiomas"
+                style="@style/CategoryButton"
+                android:text="Idiomas" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Medicina"
-                    android:id="@+id/cat_medicina" />
+                android:id="@+id/cat_medicina"
+                style="@style/CategoryButton"
+                android:text="Medicina" />
         </GridLayout>
     </LinearLayout>
 </ScrollView>
