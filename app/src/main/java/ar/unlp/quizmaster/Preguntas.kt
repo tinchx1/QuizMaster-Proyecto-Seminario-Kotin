@@ -14,6 +14,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.children
+import androidx.core.view.get
 import org.json.JSONObject
 import java.io.InputStream
 
@@ -56,7 +58,7 @@ class Preguntas : AppCompatActivity() {
             questionIndex = it.getInt("questionIndex")
             answeredQuestions = it.getInt("answeredQuestions")
             correctAnswers = it.getInt("correctAnswers")
-            comodin.isEnabled = it.getBoolean("comodinState")
+            comodin.isEnabled = it.getBoolean("comodínState")
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
@@ -92,8 +94,14 @@ class Preguntas : AppCompatActivity() {
             putInt("questionIndex", questionIndex)
             putInt("answeredQuestions", answeredQuestions)
             putInt("correctAnswers", correctAnswers)
-            putBoolean("comodinState", comodin.isEnabled)
+            putBoolean("comodínState", comodin.isEnabled)
         }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        // luego del onCreate y del onStart
+        if (!comodin.isEnabled) comodin.alpha = 0.5f
     }
 
     private fun questionsFromJSON(category: String): Array<Question> {
@@ -117,7 +125,7 @@ class Preguntas : AppCompatActivity() {
 
     public fun handleComodín(v: View) {
         (v as ImageView).isEnabled = false
-        comodin.setAlpha(0.5f)
+        comodin.alpha = 0.5f
         nextOrFinish()
     }
 
