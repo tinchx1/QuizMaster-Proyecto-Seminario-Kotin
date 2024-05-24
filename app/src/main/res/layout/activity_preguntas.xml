@@ -81,18 +81,18 @@
 
         <Button
             android:id="@+id/opcion1"
-            style="@style/Opcion" />
+            style="@style/Opción" />
 
         <Button
             android:id="@+id/opcion2"
-            style="@style/Opcion" />
+            style="@style/Opción" />
 
         <Button
             android:id="@+id/opcion3"
-            style="@style/Opcion" />
+            style="@style/Opción" />
 
         <Button
             android:id="@+id/opcion4"
-            style="@style/Opcion" />
+            style="@style/Opción" />
     </LinearLayout>
 </RelativeLayout>

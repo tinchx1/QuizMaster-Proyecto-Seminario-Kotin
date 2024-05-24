@@ -3,22 +3,26 @@
     <style name="Base.Theme.QuizMaster" parent="Theme.Material3.Dark">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
     <style name="Theme.QuizMaster" parent="Base.Theme.QuizMaster" />
 
-    <style name="BaseOpcion">
+    <style name="BaseOpción">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:text">opcion</item>
+        <item name="android:text">opción</item>
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="Opcion" parent="BaseOpcion" />
-    
+    <style name="Opción" parent="BaseOpción" />
+
     <style name="CategoryButton">
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:onClick">launchCategory</item>
     </style>
+
 </resources>

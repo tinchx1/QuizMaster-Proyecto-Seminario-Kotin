@@ -30,7 +30,7 @@
         <Button
                 style="@style/CategoryButton"
                 android:text="Ciencia"
-                android:id="@+id/cat_ciencia" />
+                android:id="@+id/cat_ciencia"/>
 
         <Button
                 style="@style/CategoryButton"
@@ -40,7 +40,7 @@
         <Button
                 style="@style/CategoryButton"
                 android:text="Geografía"
-                android:id="@+id/cat_geografia" />
+                android:id="@+id/cat_geografía" />
 
         <Button
                 style="@style/CategoryButton"
@@ -55,12 +55,12 @@
         <Button
                 style="@style/CategoryButton"
                 android:text="Tecnología"
-                android:id="@+id/cat_tecnologia" />
+                android:id="@+id/cat_tecnología" />
 
         <Button
                 style="@style/CategoryButton"
                 android:text="Arte y cultura"
-                android:id="@+id/cat_arte_cultura" />
+                android:id="@+id/cat_arte_y_cultura" />
 
         <Button
                 style="@style/CategoryButton"
@@ -70,17 +70,17 @@
         <Button
                 style="@style/CategoryButton"
                 android:text="Filosofía"
-                android:id="@+id/cat_filosofia" />
+                android:id="@+id/cat_filosofía" />
 
         <Button
                 style="@style/CategoryButton"
                 android:text="Gastronomía"
-                android:id="@+id/cat_gastronomia" />
+                android:id="@+id/cat_gastronomía" />
 
         <Button
                 style="@style/CategoryButton"
                 android:text="Música"
-                android:id="@+id/cat_musica" />
+                android:id="@+id/cat_música" />
 
         <Button
                 style="@style/CategoryButton"
