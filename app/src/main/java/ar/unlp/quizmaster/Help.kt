@@ -18,6 +18,8 @@ class Help : AppCompatActivity() {
             insets
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        setTitle(getString(R.string.help_title))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

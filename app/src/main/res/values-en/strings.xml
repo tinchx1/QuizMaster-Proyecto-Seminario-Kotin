@@ -5,6 +5,7 @@
     <string name="suerte_para_la_proxima">Better luck next time!</string>
     <string name="categorías">Categories:</string>
     <string name="comodín_descripción">Joker</string>
+    <string name="help_title">Help</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">You have answered %d correct answer.</item>
         <item quantity="other">You have answered %d correct answers.</item>

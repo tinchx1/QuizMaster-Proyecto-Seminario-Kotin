@@ -5,6 +5,7 @@
     <string name="suerte_para_la_proxima">¡Suerte para la próxima!</string>
     <string name="categorías">Categorías:</string>
     <string name="comodín_descripción">Comodín</string>
+    <string name="help_title">Ayuda</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">Respondiste %d pregunta correcta.</item>
         <item quantity="other">Respondiste %d preguntas correctas.</item>
