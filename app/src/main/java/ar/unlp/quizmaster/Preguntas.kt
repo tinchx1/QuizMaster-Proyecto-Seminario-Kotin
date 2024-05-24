@@ -36,7 +36,7 @@ class Preguntas : AppCompatActivity() {
         }
 
         val category = intent.getStringExtra("category") ?: ""
-        findViewById<TextView>(R.id.texto_categoría).text = category
+        setTitle(category)
 
         options = arrayOf(
             findViewById(R.id.opción1),
