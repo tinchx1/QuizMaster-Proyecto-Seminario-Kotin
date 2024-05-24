@@ -4,6 +4,8 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.os.Handler
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -56,7 +58,7 @@ class Preguntas : AppCompatActivity() {
             correctAnswers = it.getInt("correctAnswers")
             comodin.isEnabled = it.getBoolean("comodinState")
         }
-
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onStart() {
@@ -64,6 +66,24 @@ class Preguntas : AppCompatActivity() {
         findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
         findViewById<TextView>(R.id.num_preguntas).text = answeredQuestions.toString()
         askQuestion(questions[questionIndex])
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        if (item.itemId == R.id.help) {
+            val i = Intent(this, Help::class.java)
+            startActivity(i)
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

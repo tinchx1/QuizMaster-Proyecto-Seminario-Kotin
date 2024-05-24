@@ -2,26 +2,32 @@ package ar.unlp.quizmaster
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
-import android.widget.ScrollView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.children
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-    private var activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        result -> if (result.resultCode == RESULT_OK) {
-            val correctAnswers = result.data?.getIntExtra("correctAnswers", Int.MIN_VALUE) ?: Int.MIN_VALUE
-            val text = resources.getQuantityString(R.plurals.correct_answers_message, correctAnswers, correctAnswers) + " " +
-                if (correctAnswers > 0) getString(R.string.congrats) else getString(R.string.better_luck_next_time)
-            Snackbar.make(findViewById(R.id.main), text, Snackbar.LENGTH_LONG).show()
+    private var activityResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val correctAnswers =
+                    result.data?.getIntExtra("correctAnswers", Int.MIN_VALUE) ?: Int.MIN_VALUE
+                val text = resources.getQuantityString(
+                    R.plurals.correct_answers_message,
+                    correctAnswers,
+                    correctAnswers
+                ) + " " +
+                        if (correctAnswers > 0) getString(R.string.congrats) else getString(R.string.better_luck_next_time)
+                Snackbar.make(findViewById(R.id.main), text, Snackbar.LENGTH_LONG).show()
+            }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +38,20 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.help) {
+            val i = Intent(this, Help::class.java)
+            startActivity(i)
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun launchCategory(v: View) {

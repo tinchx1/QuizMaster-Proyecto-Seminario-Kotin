@@ -3,6 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="correct">#4CAF50</color>
-    <color name="incorrect">#E91E63</color>
-    <color name="missed">#827717</color>
+    <color name="incorrect">#FF5252</color>
+    <color name="missed">#FFC107</color>
 </resources>
