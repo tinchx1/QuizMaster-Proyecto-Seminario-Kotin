@@ -18,14 +18,14 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="25sp"
                 android:textSize="50sp"
-                android:text="QuizMaster" />
+                android:text="@string/app_name" />
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15sp"
                 android:textSize="30sp"
-                android:text="Categorías:" />
+                android:text="@string/categorías" />
 
         <Button
                 style="@style/CategoryButton"

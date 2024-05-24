@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">QuizMaster</string>
-    <string name="congrats">¡Genial!</string>
-    <string name="better_luck_next_time">¡Suerte para la próxima!</string>
-    <plurals name="correct_answers_message">
+    <string name="genial">¡Genial!</string>
+    <string name="suerte_para_la_proxima">¡Suerte para la próxima!</string>
+    <string name="categorías">Categorías:</string>
+    <string name="comodín_descripción">Comodín</string>
+    <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">Respondiste %d pregunta correcta.</item>
         <item quantity="other">Respondiste %d preguntas correctas.</item>
     </plurals>

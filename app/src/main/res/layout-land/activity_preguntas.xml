@@ -13,15 +13,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/texto_categoría"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@id/texto_categoria"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/puntaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/barra"
                 android:textSize="30sp" />
 
             <TextView
@@ -35,12 +34,11 @@
                 android:id="@+id/num_preguntas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/barra"
                 android:textSize="30sp" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/texto_categoria"
+            android:id="@+id/texto_categoría"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -49,19 +47,20 @@
 
 
         <ImageView
-            android:id="@+id/comodin"
+            android:id="@+id/comodín"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_toEndOf="@+id/texto_categoria"
+            android:layout_height="48dp"
+            android:layout_toEndOf="@+id/texto_categoría"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="handleComodin"
+            android:onClick="handleComodín"
+            android:contentDescription="@string/comodín_descripción"
             android:src="@drawable/joker_icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/comodin"
+            android:layout_toEndOf="@+id/comodín"
             android:text="30s"
             android:textSize="30sp" />
 
@@ -91,19 +90,19 @@
         android:paddingBottom="5dp">
 
         <Button
-            android:id="@+id/opcion1"
+            android:id="@+id/opción1"
             style="@style/Opción" />
 
         <Button
-            android:id="@+id/opcion2"
+            android:id="@+id/opción2"
             style="@style/Opción" />
 
         <Button
-            android:id="@+id/opcion3"
+            android:id="@+id/opción3"
             style="@style/Opción" />
 
         <Button
-            android:id="@+id/opcion4"
+            android:id="@+id/opción4"
             style="@style/Opción" />
     </LinearLayout>
 </RelativeLayout>

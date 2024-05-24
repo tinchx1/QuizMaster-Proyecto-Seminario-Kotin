@@ -36,15 +36,15 @@ class Preguntas : AppCompatActivity() {
         }
 
         val category = intent.getStringExtra("category") ?: ""
-        findViewById<TextView>(R.id.texto_categoria).text = category
+        findViewById<TextView>(R.id.texto_categoría).text = category
 
         options = arrayOf(
-            findViewById(R.id.opcion1),
-            findViewById(R.id.opcion2),
-            findViewById(R.id.opcion3),
-            findViewById(R.id.opcion4)
+            findViewById(R.id.opción1),
+            findViewById(R.id.opción2),
+            findViewById(R.id.opción3),
+            findViewById(R.id.opción4)
         )
-        comodin = findViewById(R.id.comodin)
+        comodin = findViewById(R.id.comodín)
 
         options.forEach { it ->
             it.setOnClickListener { answer(it as Button) }
@@ -115,7 +115,7 @@ class Preguntas : AppCompatActivity() {
         options.forEachIndexed { index, button -> button.text = q.options[index] }
     }
 
-    public fun handleComodin(v: View) {
+    public fun handleComodín(v: View) {
         (v as ImageView).isEnabled = false
         comodin.setAlpha(0.5f)
         nextOrFinish()
@@ -135,7 +135,7 @@ class Preguntas : AppCompatActivity() {
     private fun answer(button: Button) {
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
         val previousColorStateList = button.backgroundTintList
-        val comodin = findViewById<ImageView>(R.id.comodin)
+        val comodin = findViewById<ImageView>(R.id.comodín)
 
         val numPreguntas = findViewById<TextView>(R.id.num_preguntas)
         numPreguntas.text = (++answeredQuestions).toString()

@@ -5,20 +5,20 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/texto_categoria"
+        android:id="@+id/texto_categoría"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:text="Categoria"
+        android:text="Categoría"
         android:textSize="40sp" />
 
     <LinearLayout
         android:id="@+id/linear_funcionalidades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/texto_categoria"
+        android:layout_below="@id/texto_categoría"
         android:gravity="center">
 
         <TextView
@@ -40,13 +40,14 @@
             android:textSize="30sp" />
 
         <ImageView
-            android:id="@+id/comodin"
+            android:id="@+id/comodín"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:layout_marginHorizontal="20dp"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="handleComodin"
+            android:onClick="handleComodín"
+            android:contentDescription="@string/comodín_descripción"
             android:src="@drawable/joker_icon" />
 
         <TextView
@@ -80,19 +81,19 @@
         android:paddingBottom="30dp">
 
         <Button
-            android:id="@+id/opcion1"
+            android:id="@+id/opción1"
             style="@style/Opción" />
 
         <Button
-            android:id="@+id/opcion2"
+            android:id="@+id/opción2"
             style="@style/Opción" />
 
         <Button
-            android:id="@+id/opcion3"
+            android:id="@+id/opción3"
             style="@style/Opción" />
 
         <Button
-            android:id="@+id/opcion4"
+            android:id="@+id/opción4"
             style="@style/Opción" />
     </LinearLayout>
 </RelativeLayout>
