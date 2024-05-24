@@ -3,7 +3,7 @@
     <string name="app_name">QuizMaster</string>
     <string name="genial">Great!</string>
     <string name="suerte_para_la_proxima">Better luck next time!</string>
-    <string name="categorías">Categories</string>
+    <string name="categorías">Categories:</string>
     <string name="comodín_descripción">Joker</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">You have answered %d correct answer.</item>
