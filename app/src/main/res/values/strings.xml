@@ -2,10 +2,22 @@
 <resources>
     <string name="app_name">QuizMaster</string>
     <string name="genial">¡Genial!</string>
-    <string name="suerte_para_la_proxima">¡Suerte para la próxima!</string>
+    <string name="suerte_para_la_próxima">¡Suerte para la próxima!</string>
     <string name="categorías">Categorías:</string>
     <string name="comodín_descripción">Comodín</string>
     <string name="help_title">Ayuda</string>
+    <string name="how_to_play">1. Selecciona una Categoría:\n- Al iniciar el juego, podrás elegir entre diferentes
+        categorías como Historia, Ciencia, Entretenimiento, Deportes, y más. Selecciona la que más te interese para
+        comenzar.\n\n2. Responde las Preguntas:\n- Cada categoría contiene un conjunto de preguntas. Deberás responder
+        un total de 5 preguntas.\n- Lee cada pregunta cuidadosamente y selecciona la respuesta que consideres correcta
+        entre las opciones proporcionadas.\n\n3. Utiliza el Comodín:\n- Si te encuentras con una pregunta difícil o
+        simplemente no sabes la respuesta, puedes usar un comodín.\n- El comodín te permitirá cambiar la pregunta actual
+        por otra diferente dentro de la misma categoría.\n- Tienes un solo comodín por categoría, así que úsalo
+        sabiamente.\n\n4. Gana Puntos y Avanza:\n- Por cada respuesta correcta, ganarás puntos que se acumularán a lo
+        largo del juego.\n- Intenta responder correctamente a todas las preguntas para obtener la mayor cantidad de
+        puntos posibles y convertirte en el mejor QuizMaster.
+    </string>
+    <string name="how_to_play_title">Cómo Jugar:</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">Respondiste %d pregunta correcta.</item>
         <item quantity="other">Respondiste %d preguntas correctas.</item>
