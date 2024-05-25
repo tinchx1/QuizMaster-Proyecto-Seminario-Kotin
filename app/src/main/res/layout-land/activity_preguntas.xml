@@ -6,7 +6,8 @@
       android:columnCount="2"
 android:stretchColumns="*">
 
-    <TableRow>
+    <TableRow
+            android:layout_marginTop="24sp">
         <LinearLayout
                 android:id="@+id/linear_funcionalidades"
                 android:layout_width="match_parent"
@@ -17,7 +18,6 @@ android:stretchColumns="*">
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
                     android:gravity="center">
 
                 <TextView
@@ -53,7 +53,6 @@ android:stretchColumns="*">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/comodín"
                     android:text="30s"
                     android:textSize="30sp" />
 
@@ -92,8 +91,9 @@ android:stretchColumns="*">
             <Button
                     android:id="@+id/opción4"
                     style="@style/Opción"/>
-        </LinearLayout>
-    </TableRow>
 
+        </LinearLayout>
+
+    </TableRow>
 
 </TableLayout>
