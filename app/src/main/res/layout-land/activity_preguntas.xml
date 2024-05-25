@@ -3,97 +3,103 @@
     android:id="@+id/main_preguntas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-      android:columnCount="2"
-android:stretchColumns="*">
+    android:layout_marginTop="45dp"
+    android:columnCount="2"
+    android:stretchColumns="*">
 
     <TableRow>
+
         <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:id="@+id/linear_funcionalidades"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-        android:layout_span="2"
-        android:gravity="center">
+                android:gravity="center">
 
-            <LinearLayout
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
                     android:gravity="center">
 
-                <TextView
+                    <TextView
                         android:id="@+id/puntaje"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="30sp"/>
+                        android:textSize="30sp" />
 
-                <TextView
+                    <TextView
                         android:id="@+id/barra"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="/"
-                        android:textSize="30sp"/>
+                        android:textSize="30sp" />
 
-                <TextView
+                    <TextView
                         android:id="@+id/num_preguntas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="30sp"/>
-            </LinearLayout>
+                        android:textSize="30sp" />
+                </LinearLayout>
 
-            <ImageView
+                <ImageView
                     android:id="@+id/comodín"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:clickable="true"
+                    android:contentDescription="@string/comodín_descripción"
                     android:focusable="true"
                     android:onClick="handleComodín"
-                    android:contentDescription="@string/comodín_descripción"
                     android:src="@drawable/joker_icon" />
 
-            <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/comodín"
                     android:text="30s"
                     android:textSize="30sp" />
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </TableRow>
-
-    <TableRow>
-        <TextView
+            <TextView
                 android:id="@+id/texto_pregunta"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="¿Pregunta?"
-                android:layout_weight="1"
-                android:textSize="15sp"/>
-        <LinearLayout
-                android:id="@+id/linear_opciones"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="15dp"
+                android:text="¿Pregunta?"
+                android:textSize="23sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_opciones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingRight="10dp">
 
             <Button
-                    android:id="@+id/opción1"
-                    style="@style/Opción"/>
+                android:id="@+id/opción1"
+                style="@style/Opción" />
 
             <Button
-                    android:id="@+id/opción2"
-                    style="@style/Opción"/>
+                android:id="@+id/opción2"
+                style="@style/Opción" />
 
             <Button
-                    android:id="@+id/opción3"
-                    style="@style/Opción"/>
+                android:id="@+id/opción3"
+                style="@style/Opción" />
 
             <Button
-                    android:id="@+id/opción4"
-                    style="@style/Opción"/>
+                android:id="@+id/opción4"
+                style="@style/Opción" />
         </LinearLayout>
     </TableRow>
-
 
 </TableLayout>

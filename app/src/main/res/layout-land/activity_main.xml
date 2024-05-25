@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/main"
-            tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,81 +13,82 @@
         android:orientation="vertical">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15sp"
-                android:textSize="30sp"
-                android:text="@string/categorías"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:padding="15sp"
+            android:text="@string/categorías"
+            android:textSize="30sp" />
 
         <GridLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:columnCount="3">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3">
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Ciencia"
-                    android:id="@+id/cat_ciencia"/>
+                android:id="@+id/cat_ciencia"
+                style="@style/CategoryButton"
+                android:text="Ciencia" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Historia"
-                    android:id="@+id/cat_historia"/>
+                android:id="@+id/cat_historia"
+                style="@style/CategoryButton"
+                android:text="Historia" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Geografía"
-                    android:id="@+id/cat_geografía"/>
+                android:id="@+id/cat_geografía"
+                style="@style/CategoryButton"
+                android:text="Geografía" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Deporte"
-                    android:id="@+id/cat_deporte"/>
+                android:id="@+id/cat_deporte"
+                style="@style/CategoryButton"
+                android:text="Deporte" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Entretenimiento"
-                    android:id="@+id/cat_entretenimiento"/>
+                android:id="@+id/cat_entretenimiento"
+                style="@style/CategoryButton"
+                android:text="Entretenimiento" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Tecnología"
-                    android:id="@+id/cat_tecnología"/>
+                android:id="@+id/cat_tecnología"
+                style="@style/CategoryButton"
+                android:text="Tecnología" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Arte y cultura"
-                    android:id="@+id/cat_arte_y_cultura"/>
+                android:id="@+id/cat_arte_y_cultura"
+                style="@style/CategoryButton"
+                android:text="Arte y cultura" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Literatura"
-                    android:id="@+id/cat_literatura"/>
+                android:id="@+id/cat_literatura"
+                style="@style/CategoryButton"
+                android:text="Literatura" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Filosofía"
-                    android:id="@+id/cat_filosofía"/>
+                android:id="@+id/cat_filosofía"
+                style="@style/CategoryButton"
+                android:text="Filosofía" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Gastronomía"
-                    android:id="@+id/cat_gastronomía"/>
+                android:id="@+id/cat_gastronomía"
+                style="@style/CategoryButton"
+                android:text="Gastronomía" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Música"
-                    android:id="@+id/cat_música"/>
+                android:id="@+id/cat_música"
+                style="@style/CategoryButton"
+                android:text="Música" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Idiomas"
-                    android:id="@+id/cat_idiomas"/>
+                android:id="@+id/cat_idiomas"
+                style="@style/CategoryButton"
+                android:text="Idiomas" />
 
             <Button
-                    style="@style/CategoryButton"
-                    android:text="Medicina"
-                    android:id="@+id/cat_medicina"/>
+                android:id="@+id/cat_medicina"
+                style="@style/CategoryButton"
+                android:text="Medicina" />
         </GridLayout>
     </LinearLayout>
 </ScrollView>
