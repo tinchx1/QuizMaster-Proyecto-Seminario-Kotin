@@ -7,26 +7,11 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-    private var activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val correctAnswers = result.data?.getIntExtra("correctAnswers", Int.MIN_VALUE) ?: Int.MIN_VALUE
-            val text = resources.getQuantityString(
-                R.plurals.mensaje_respuestas_correctas,
-                correctAnswers,
-                correctAnswers
-            ) + " " +
-                    if (correctAnswers > 0) getString(R.string.genial) else getString(R.string.suerte_para_la_próxima)
-            Snackbar.make(findViewById(R.id.main), text, Snackbar.LENGTH_LONG).show()
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -53,10 +38,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchCategory(v: View) {
-        val button = findViewById<Button>(v.id)
+        val button = v as Button
         val textCategory = button.text.toString()
         val i = Intent(this, Preguntas::class.java)
         i.putExtra("category", textCategory)
-        activityResult.launch(i)
+        startActivity(i)
     }
 }
