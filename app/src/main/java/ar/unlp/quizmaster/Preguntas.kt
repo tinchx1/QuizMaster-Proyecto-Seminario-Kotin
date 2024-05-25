@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -75,7 +76,7 @@ class Preguntas : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
             return true
         }
         if (item.itemId == R.id.help) {
@@ -121,7 +122,7 @@ class Preguntas : AppCompatActivity() {
         options.forEachIndexed { index, button -> button.text = q.options[index] }
     }
 
-    public fun handleComodín(v: View) {
+    public fun handleComodin(v: View) {
         (v as ImageView).isEnabled = false
         comodin.alpha = 0.5f
         nextOrFinish()

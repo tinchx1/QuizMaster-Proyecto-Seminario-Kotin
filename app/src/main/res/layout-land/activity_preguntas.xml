@@ -46,7 +46,7 @@ android:stretchColumns="*">
                     android:layout_height="48dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="handleComodín"
+                    android:onClick="handleComodin"
                     android:contentDescription="@string/comodín_descripción"
                     android:src="@drawable/joker_icon" />
 
