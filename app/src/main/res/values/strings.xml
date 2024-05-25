@@ -18,6 +18,11 @@
         puntos posibles y convertirte en el mejor QuizMaster.
     </string>
     <string name="how_to_play_title">Cómo Jugar:</string>
+    <string name="comodín_utilizado">Has utilizado el comodín.</string>
+    <string name="comodín_no_utilizado">No has utilizado el comodín.</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="salir">Salir</string>
+    <string name="fin_del_juego">Fin del juego</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">Respondiste %d pregunta correcta.</item>
         <item quantity="other">Respondiste %d preguntas correctas.</item>

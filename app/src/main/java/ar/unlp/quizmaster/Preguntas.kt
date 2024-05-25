@@ -132,9 +132,14 @@ class Preguntas : AppCompatActivity() {
         if (questionIndex < questions.size)
             askQuestion(questions[questionIndex])
         else {
-            val i = Intent().putExtra("correctAnswers", correctAnswers)
-            setResult(RESULT_OK, i)
-            this.finish()
+            GameOverDialogFragment(correctAnswers, !comodin.isEnabled) { _, _ ->
+                questionIndex = 0
+                correctAnswers = 0
+                answeredQuestions = 0
+                comodin.isEnabled = true
+                comodin.alpha = 1f
+                onStart()
+            }.show(supportFragmentManager, "GameOverDialog")
         }
     }
 

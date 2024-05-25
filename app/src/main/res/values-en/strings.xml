@@ -10,4 +10,10 @@
         <item quantity="one">You have answered %d correct answer.</item>
         <item quantity="other">You have answered %d correct answers.</item>
     </plurals>
+    <string name="how_to_play_title">How to play:</string>
+    <string name="comodín_utilizado">You have used your wild card.</string>
+    <string name="comodín_no_utilizado">You haven\'t used your wild card.</string>
+    <string name="reiniciar">Restart</string>
+    <string name="salir">Exit</string>
+    <string name="fin_del_juego">Game over</string>
 </resources>
