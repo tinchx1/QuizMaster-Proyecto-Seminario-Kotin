@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 correctAnswers,
                 correctAnswers
             ) + " " +
-                    if (correctAnswers > 0) getString(R.string.genial) else getString(R.string.suerte_para_la_proxima)
+                    if (correctAnswers > 0) getString(R.string.genial) else getString(R.string.suerte_para_la_próxima)
             Snackbar.make(findViewById(R.id.main), text, Snackbar.LENGTH_LONG).show()
         }
     }
