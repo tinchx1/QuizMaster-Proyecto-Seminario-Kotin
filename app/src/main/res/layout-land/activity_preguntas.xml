@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_preguntas"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-      android:columnCount="2"
-android:stretchColumns="*">
+             android:id="@+id/main_preguntas"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:stretchColumns="*">
 
-    <TableRow>
+    <TableRow
+            android:id="@+id/linear_funcionalidades"
+            android:layout_marginTop="24sp"
+            android:gravity="center">
         <LinearLayout
-                android:id="@+id/linear_funcionalidades"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-        android:layout_span="2"
-        android:gravity="center">
-
+                android:layout_span="2"
+                android:gravity="center">
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
                     android:gravity="center">
 
                 <TextView
@@ -43,21 +42,21 @@ android:stretchColumns="*">
             <ImageView
                     android:id="@+id/comodín"
                     android:layout_width="wrap_content"
-                    android:layout_height="48dp"
+                    android:layout_height="60sp"
                     android:clickable="true"
                     android:focusable="true"
                     android:onClick="handleComodín"
                     android:contentDescription="@string/comodín_descripción"
-                    android:src="@drawable/joker_icon" />
+                    android:src="@drawable/joker_icon"/>
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/comodín"
                     android:text="30s"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"/>
 
         </LinearLayout>
+
 
     </TableRow>
 
