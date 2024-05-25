@@ -4,8 +4,19 @@
     <string name="genial">Great!</string>
     <string name="suerte_para_la_próxima">Better luck next time!</string>
     <string name="categorías">Categories:</string>
-    <string name="comodín_descripción">Joker</string>
+    <string name="comodín_descripción">Wild card</string>
     <string name="help_title">Help</string>
+    <string name="how_to_play">1. Select a category:\n- When the game starts, you can choose from different categories
+        such as History, Science, Entertainment, Sports, and more. Select one and a questions round will begin.\n\n
+        2. Answer the questions:\n- Each category contains a set of questions.\n- Read each one carefully and select
+        from the provided possible answers the one you think is correct.\n\n
+        3. Use your wild card:\n- If you encounter a hard question or simply don\'t know the answer to it, you can use
+        a wild card.\n- The wild card allows you to change the current question by a different one from the same
+        category.\n- You have only one wild card per category, so use it wisely.\n\n
+        4. Win points and move forward:\n- For every correct answer, you\'ll win points that get accumulated for the
+        entire game.\n- Try to answer to every question correctly to get the maximum possible points and be the best
+        QuizMaster.
+    </string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">You have answered %d correct answer.</item>
         <item quantity="other">You have answered %d correct answers.</item>
