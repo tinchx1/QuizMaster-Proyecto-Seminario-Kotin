@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">QuizMaster</string>
     <string name="genial">¡Genial!</string>
     <string name="suerte_para_la_próxima">¡Suerte para la próxima!</string>
     <string name="categorías">Categorías:</string>
     <string name="comodín_descripción">Comodín</string>
     <string name="help_title">Ayuda</string>
-    <string name="how_to_play">1. Selecciona una Categoría:\n- Al iniciar el juego, podrás elegir entre diferentes
+    <string name="how_to_play" tools:ignore="Typos">1. Selecciona una Categoría:\n- Al iniciar el juego, podrás elegir
+        entre diferentes
         categorías como Historia, Ciencia, Entretenimiento, Deportes, y más. Selecciona la que más te interese para
         comenzar.\n\n2. Responde las Preguntas:\n- Cada categoría contiene un conjunto de preguntas.\n- Lee cada
         pregunta cuidadosamente y selecciona la respuesta que consideres correcta entre las opciones

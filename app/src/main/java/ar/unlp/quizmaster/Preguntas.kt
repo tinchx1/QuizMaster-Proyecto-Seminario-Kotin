@@ -4,13 +4,13 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -122,9 +122,11 @@ class Preguntas : AppCompatActivity() {
         options.forEachIndexed { index, button -> button.text = q.options[index] }
     }
 
-    public fun handleComodin(v: View) {
-        (v as ImageView).isEnabled = false
-        comodin.alpha = 0.5f
+    fun handleComodin(v: View) {
+        v.apply {
+            isEnabled = false
+            alpha = 0.5f
+        }
         nextOrFinish()
     }
 
@@ -167,7 +169,7 @@ class Preguntas : AppCompatActivity() {
             button.backgroundTintList = incorrectColorStateList
             correctButton.backgroundTintList = missedColorStateList
         }
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             // Restaurar colores
             button.backgroundTintList = previousColorStateList
             if (!correct)
