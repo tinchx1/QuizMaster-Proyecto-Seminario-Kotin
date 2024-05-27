@@ -24,7 +24,8 @@
     <string name="how_to_play_title">How to play:</string>
     <string name="comodín_utilizado">You have used your wild card.</string>
     <string name="comodín_no_utilizado">You haven\'t used your wild card.</string>
-    <string name="reiniciar">Restart</string>
-    <string name="salir">Exit</string>
+    <string name="sí">Yes</string>
+    <string name="no">No</string>
     <string name="fin_del_juego">Game over</string>
+    <string name="jugar_esta_categoría_de_nuevo">Play this category again?</string>
 </resources>

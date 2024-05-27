@@ -18,12 +18,13 @@ class GameOverDialogFragment(
         val comodinUsedText =
             if (comodinUsed) getString(R.string.comodín_utilizado)
             else getString(R.string.comodín_no_utilizado)
+        val askRestartCategory = getString(R.string.jugar_esta_categoría_de_nuevo)
 
         return AlertDialog.Builder(requireContext())
             .setTitle(getString(R.string.fin_del_juego))
-            .setMessage("$correctText\n\n$comodinUsedText")
-            .setPositiveButton(getString(R.string.reiniciar), restart)
-            .setNegativeButton(getString(R.string.salir)) { _, _ ->
+            .setMessage("$correctText\n\n$comodinUsedText\n\n$askRestartCategory")
+            .setPositiveButton(getString(R.string.sí), restart)
+            .setNegativeButton(getString(R.string.no)) { _, _ ->
                 activity?.finish()
             }.create()
     }
