@@ -21,12 +21,12 @@
     <string name="how_to_play_title">Cómo Jugar:</string>
     <string name="comodín_utilizado">Has utilizado el comodín.</string>
     <string name="comodín_no_utilizado">No has utilizado el comodín.</string>
-    <string name="sí">Sí</string>
-    <string name="no">No</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="aceptar">Aceptar</string>
     <string name="fin_del_juego">Fin del juego</string>
-    <string name="jugar_esta_categoría_de_nuevo">¿Jugar esta categoría de nuevo?</string>
+    <string name="jugar_esta_categoría_de_nuevo">¿Jugar esta categoría de nuevo?\nClick en reiniciar!</string>
     <plurals name="mensaje_respuestas_correctas">
-        <item quantity="one">Respondiste %d pregunta correcta.</item>
-        <item quantity="other">Respondiste %d preguntas correctas.</item>
+        <item quantity="one">Respondiste %1$d pregunta correcta de %2$d en total.</item>
+        <item quantity="other">Respondiste %1$d preguntas correctas de %2$d en total.</item>
     </plurals>
 </resources>

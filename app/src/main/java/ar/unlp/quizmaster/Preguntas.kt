@@ -135,7 +135,7 @@ class Preguntas : AppCompatActivity() {
         if (questionIndex < questions.size)
             askQuestion(questions[questionIndex])
         else {
-            GameOverDialogFragment(correctAnswers, !comodin.isEnabled) { _, _ ->
+            GameOverDialogFragment(correctAnswers, answeredQuestions, !comodin.isEnabled) { _, _ ->
                 questionIndex = 0
                 correctAnswers = 0
                 answeredQuestions = 0
