@@ -21,6 +21,8 @@
         <item quantity="one">You have answered %1$d correct answer from %2$d in total.</item>
         <item quantity="other">You have answered %1$d correct answers from %2$d in total.</item>
     </plurals>
+    <string name="title_alertdialog_name">Enter your name</string>
+    <string name="message_alertdialog_name">Please, enter your name to start the game</string>
     <string name="how_to_play_title">How to play:</string>
     <string name="comodín_utilizado">You have used your wild card.</string>
     <string name="comodín_no_utilizado">You haven\'t used your wild card.</string>

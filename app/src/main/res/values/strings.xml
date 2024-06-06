@@ -18,6 +18,8 @@
         Intenta responder correctamente a todas las preguntas para obtener la mayor cantidad de puntos posibles y
         convertirte en el mejor QuizMaster.
     </string>
+    <string name="title_alertdialog_name">Ingresa tu nombre</string>
+    <string name="message_alertdialog_name">Por favor, ingresa tu nombre para comenzar a jugar</string>
     <string name="how_to_play_title">Cómo Jugar:</string>
     <string name="comodín_utilizado">Has utilizado el comodín.</string>
     <string name="comodín_no_utilizado">No has utilizado el comodín.</string>
