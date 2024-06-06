@@ -2,9 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/ranking"
+        android:title="ranking"
+        android:icon="@drawable/ranking_icon"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/help"
-        android:title="help"
         android:icon="@drawable/sharp_help_24"
-        app:showAsAction="always"
-        />
+        android:title="help"
+        app:showAsAction="always" />
 </menu>
