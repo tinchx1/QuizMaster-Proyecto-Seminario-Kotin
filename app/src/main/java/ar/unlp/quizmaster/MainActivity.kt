@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        createUsernameDialog()
+    }
+
+    private fun createUsernameDialog() {
         val editText = EditText(this).apply {
             val paddingDp = 16
             val paddingPx = (paddingDp * resources.displayMetrics.density).toInt()
@@ -55,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(false)
             .setPositiveButton(getString(R.string.aceptar)) { _, _ ->
                 userName = editText.text.trim().toString()
-                guardarUsuario(userName)
+                crearUsuario(userName)
             }
             .create()
 
@@ -64,18 +69,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         alertDialog.show()
+        /*
+          Una vez mostrado, desactivar botón positivo.
+          El EditText, luego, lo (des)activará si el nombre de usuario es válido o no.
+        */
         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = false
     }
 
-    fun guardarUsuario(userName: String) {
-        val user = User(userName)
+    private fun crearUsuario(userName: String) {
         val preferencias: SharedPreferences =
-            this.getSharedPreferences("MyApp", Context.MODE_PRIVATE)
-        val editor = preferencias.edit()
-        val gson = Gson()
-        val json = gson.toJson(user)
-        editor.putString(user.userName, json)
-        editor.apply()
+            this.getSharedPreferences("Users", Context.MODE_PRIVATE)
+        // Guarda solo si un usuario con ese nombre no existe
+        if (!preferencias.contains(userName)) {
+            val user = User(userName)
+            val json = Gson().toJson(user)
+            val editor = preferencias.edit()
+            editor.putString(userName, json)
+            editor.apply()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -92,6 +103,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    @Suppress("unused") // Utilizado en app/src/main/res/values/themes.xml
     fun launchCategory(v: View) {
         val button = v as Button
         val textCategory = button.text.toString()
