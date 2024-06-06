@@ -144,6 +144,7 @@ class Preguntas : AppCompatActivity() {
                 comodin.alpha = 1f
                 onStart()
             }.show(supportFragmentManager, "GameOverDialog")
+            currentUser.increment(correctAnswers, answeredQuestions)
             UserManager.commit(currentUser)
         }
     }
