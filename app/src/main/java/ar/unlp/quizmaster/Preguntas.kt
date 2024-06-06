@@ -1,13 +1,10 @@
 package ar.unlp.quizmaster
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -18,7 +15,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.gson.Gson
 import org.json.JSONObject
 import java.io.InputStream
 
@@ -30,7 +26,7 @@ class Preguntas : AppCompatActivity() {
     private var questionIndex = 0
     private var answeredQuestions = 0
     private var correctAnswers = 0
-    private var user: User? = null
+    private lateinit var currentUser: User // Nunca debería ser null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -41,10 +37,9 @@ class Preguntas : AppCompatActivity() {
             insets
         }
 
-        val userName = intent.getStringExtra("userName") ?: ""
-        this.user = obtenerUsuario(userName)
-        val category = intent.getStringExtra("category") ?: ""
-        setTitle("${this.user?.userName}   $category")
+        currentUser = UserManager.get(intent.getStringExtra("userName")!!)
+        val category = intent.getStringExtra("category")!!
+        setTitle("(${currentUser.name}) $category")
         options = arrayOf(
             findViewById(R.id.opción1),
             findViewById(R.id.opción2),
@@ -66,29 +61,6 @@ class Preguntas : AppCompatActivity() {
             comodin.isEnabled = it.getBoolean("comodínState")
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    private fun guardarUsuario(context: Context, user: User) {
-        val preferencias: SharedPreferences =
-            context.getSharedPreferences("MyApp", Context.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = preferencias.edit()
-        val gson = Gson()
-        val json = gson.toJson(user) // Convertir objetos User a cadena JSON
-        editor.putString(user.userName, json)
-        editor.apply()
-    }
-
-    private fun obtenerUsuario(userName: String): User? {
-        val preferencias: SharedPreferences =
-            this.getSharedPreferences("MyApp", Context.MODE_PRIVATE)
-        val gson = Gson()
-        val json = preferencias.getString(userName, null)
-        Log.d("MyApp", "json: $json")
-        return if (json != null) {
-            gson.fromJson(json, User::class.java)
-        } else {
-            null
-        }
     }
 
     override fun onStart() {
@@ -172,6 +144,7 @@ class Preguntas : AppCompatActivity() {
                 comodin.alpha = 1f
                 onStart()
             }.show(supportFragmentManager, "GameOverDialog")
+            UserManager.commit(currentUser)
         }
     }
 

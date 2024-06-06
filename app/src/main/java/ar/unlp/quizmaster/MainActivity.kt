@@ -1,8 +1,6 @@
 package ar.unlp.quizmaster
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
-import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
     private var userName: String = ""
@@ -30,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        UserManager.sharedPreferences = getSharedPreferences("Users", MODE_PRIVATE)
 
         createUsernameDialog()
     }
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(false)
             .setPositiveButton(getString(R.string.aceptar)) { _, _ ->
                 userName = editText.text.trim().toString()
-                crearUsuario(userName)
+                UserManager.add(userName)
             }
             .create()
 
@@ -74,19 +73,6 @@ class MainActivity : AppCompatActivity() {
           El EditText, luego, lo (des)activará si el nombre de usuario es válido o no.
         */
         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = false
-    }
-
-    private fun crearUsuario(userName: String) {
-        val preferencias: SharedPreferences =
-            this.getSharedPreferences("Users", Context.MODE_PRIVATE)
-        // Guarda solo si un usuario con ese nombre no existe
-        if (!preferencias.contains(userName)) {
-            val user = User(userName)
-            val json = Gson().toJson(user)
-            val editor = preferencias.edit()
-            editor.putString(userName, json)
-            editor.apply()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
