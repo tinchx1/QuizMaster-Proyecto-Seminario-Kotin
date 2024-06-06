@@ -15,10 +15,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.doAfterTextChanged
 import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
-    private var userName: String? = null
+    private var userName: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
+            isSingleLine = true
         }
 
         val linearLayout = LinearLayout(this).apply {
@@ -50,14 +52,19 @@ class MainActivity : AppCompatActivity() {
             .setTitle(getString(R.string.title_alertdialog_name))
             .setMessage(getString(R.string.message_alertdialog_name))
             .setView(linearLayout)
-            .setPositiveButton(getString(R.string.aceptar)) { dialog, _ ->
-                userName = editText.text.toString()
-                guardarUsuario(userName!!)
-                dialog.dismiss()
+            .setCancelable(false)
+            .setPositiveButton(getString(R.string.aceptar)) { _, _ ->
+                userName = editText.text.trim().toString()
+                guardarUsuario(userName)
             }
             .create()
 
+        editText.doAfterTextChanged { text ->
+            text?.let { alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = it.isNotBlank() }
+        }
+
         alertDialog.show()
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = false
     }
 
     fun guardarUsuario(userName: String) {
