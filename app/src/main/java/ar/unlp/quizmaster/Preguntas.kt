@@ -3,6 +3,7 @@ package ar.unlp.quizmaster
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.view.Menu
@@ -27,6 +28,8 @@ class Preguntas : AppCompatActivity() {
     private var answeredQuestions = 0
     private var correctAnswers = 0
     private lateinit var currentUser: User // Nunca debería ser null
+    private var timer: CountDownTimer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -120,7 +123,35 @@ class Preguntas : AppCompatActivity() {
 
     private fun askQuestion(q: Question) {
         findViewById<TextView>(R.id.texto_pregunta).text = q.questionText
-        options.forEachIndexed { index, button -> button.text = q.options[index] }
+        options.forEachIndexed { index, button ->
+            button.text = q.options[index]
+            button.isClickable = true
+        }
+        timer?.cancel()
+        timer = object : CountDownTimer(31000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                findViewById<TextView>(R.id.timer).text = "${millisUntilFinished / 1000}s"
+            }
+
+            override fun onFinish() {
+                findViewById<TextView>(R.id.timer).text = "0s"
+                handleIncorrectAnswer()
+            }
+        }.start()
+    }
+
+    private fun handleIncorrectAnswer() {
+        val correctButton = options[questions[questionIndex].correctAnswerIndex]
+        val missedColorStateList = ColorStateList.valueOf(getColor(R.color.missed))
+        correctButton.backgroundTintList = missedColorStateList
+        options.forEach { it.isClickable = false }
+        val numPreguntas = findViewById<TextView>(R.id.num_preguntas)
+        numPreguntas.text = (++answeredQuestions).toString()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            correctButton.backgroundTintList = null
+            nextOrFinish()
+        }, 3000)
     }
 
     fun handleComodin(v: View) {
@@ -150,6 +181,7 @@ class Preguntas : AppCompatActivity() {
     }
 
     private fun answer(button: Button) {
+        timer?.cancel()
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
         val previousColorStateList = button.backgroundTintList
         val comodin = findViewById<ImageView>(R.id.comodín)
