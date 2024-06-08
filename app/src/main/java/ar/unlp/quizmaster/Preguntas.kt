@@ -12,10 +12,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import org.json.JSONObject
 import java.io.InputStream
 
@@ -32,13 +29,7 @@ class Preguntas : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_preguntas)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_preguntas)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         currentUser = UserManager.get(intent.getStringExtra("userName")!!)
         val category = intent.getStringExtra("category")!!
@@ -51,8 +42,8 @@ class Preguntas : AppCompatActivity() {
         )
         comodin = findViewById(R.id.comodín)
 
-        options.forEach { it ->
-            it.setOnClickListener { answer(it as Button) }
+        options.forEach {
+            it.setOnClickListener { _ -> answer(it) }
         }
 
         questions = questionsFromJSON(category)
@@ -183,7 +174,6 @@ class Preguntas : AppCompatActivity() {
     private fun answer(button: Button) {
         timer?.cancel()
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
-        val previousColorStateList = button.backgroundTintList
         val comodin = findViewById<ImageView>(R.id.comodín)
 
         val numPreguntas = findViewById<TextView>(R.id.num_preguntas)
@@ -206,9 +196,9 @@ class Preguntas : AppCompatActivity() {
         }
         Handler(Looper.getMainLooper()).postDelayed({
             // Restaurar colores
-            button.backgroundTintList = previousColorStateList
+            button.backgroundTintList = null
             if (!correct)
-                correctButton.backgroundTintList = previousColorStateList
+                correctButton.backgroundTintList = null
             nextOrFinish()
             options.forEach { it.isClickable = true }
             comodin.isClickable = true
