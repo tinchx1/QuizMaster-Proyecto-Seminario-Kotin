@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        RankingManager.sharedPreferences = getSharedPreferences("Ranking", MODE_PRIVATE)
+        UserManager.sharedPreferences = getSharedPreferences("Ranking", MODE_PRIVATE)
     }
 
         UserManager.sharedPreferences = getSharedPreferences("Users", MODE_PRIVATE)
