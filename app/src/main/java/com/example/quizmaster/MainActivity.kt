@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.children
+import ar.unlp.quizmaster.Preguntas
+import ar.unlp.quizmaster.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        findViewById<ScrollView>(R.id.linear_main).children.filter { it is Button }.forEach { v ->
+        findViewById<ScrollView>(R.id.main).children.filter { it is Button }.forEach { v ->
             v.setOnClickListener { launchCategory(v) }
         }
     }
