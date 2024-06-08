@@ -3,11 +3,11 @@
     android:id="@+id/main_preguntas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="24sp"
+             android:layout_marginTop="24dp"
     android:columnCount="2"
     android:stretchColumns="*">
 
-    <TableRow android:layout_marginTop="20sp">
+    <TableRow android:layout_marginTop="24dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -68,11 +68,11 @@
                 android:id="@+id/texto_pregunta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 android:gravity="center"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="24dp"
                 android:text="¿Pregunta?"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingHorizontal="15dp">
+            android:paddingHorizontal="16dp">
 
             <Button
                 android:id="@+id/opción1"

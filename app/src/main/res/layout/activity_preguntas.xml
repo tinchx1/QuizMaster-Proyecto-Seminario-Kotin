@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="32dp"
         android:gravity="center">
 
         <TextView
@@ -32,9 +32,9 @@
 
         <ImageView
             android:id="@+id/comodín"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="32dp"
             android:clickable="true"
             android:contentDescription="@string/comodín_descripción"
             android:focusable="true"
@@ -57,10 +57,10 @@
         android:layout_below="@id/linear_funcionalidades"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:paddingHorizontal="20dp"
-        android:paddingBottom="10dp"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="16dp"
         android:text="¿Pregunta?"
-        android:textSize="26sp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:id="@+id/linear_opciones"
@@ -69,8 +69,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:paddingHorizontal="30dp"
-        android:paddingBottom="30dp">
+        android:paddingHorizontal="32dp"
+        android:paddingBottom="32dp">
 
         <Button
             android:id="@+id/opción1"
