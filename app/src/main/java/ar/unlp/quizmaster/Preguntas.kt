@@ -29,7 +29,8 @@ class Preguntas : AppCompatActivity() {
     private var correctAnswers = 0
     private lateinit var currentUser: User // Nunca debería ser null
     private var timer: CountDownTimer? = null
-
+    private var timeLeft: Long = 31000
+    private var isPaused = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -66,11 +67,18 @@ class Preguntas : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    override fun onPause() {
+        super.onPause()
+        timer?.cancel()
+        isPaused = true
+    }
+
     override fun onStart() {
         super.onStart()
         findViewById<TextView>(R.id.puntaje).text = correctAnswers.toString()
         findViewById<TextView>(R.id.num_preguntas).text = answeredQuestions.toString()
         askQuestion(questions[questionIndex])
+        isPaused = false
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -127,9 +135,13 @@ class Preguntas : AppCompatActivity() {
             button.text = q.options[index]
             button.isClickable = true
         }
+        if (!isPaused) {
+            timeLeft = 31000
+        }
         timer?.cancel()
-        timer = object : CountDownTimer(31000, 1000) {
+        timer = object : CountDownTimer(timeLeft, 1000) {
             override fun onTick(millisUntilFinished: Long) {
+                timeLeft = millisUntilFinished
                 findViewById<TextView>(R.id.timer).text = "${millisUntilFinished / 1000}s"
             }
 
@@ -164,9 +176,9 @@ class Preguntas : AppCompatActivity() {
 
     private fun nextOrFinish() {
         questionIndex++
-        if (questionIndex < questions.size)
+        if (questionIndex < questions.size) {
             askQuestion(questions[questionIndex])
-        else {
+        } else {
             GameOverDialogFragment(correctAnswers, answeredQuestions, !comodin.isEnabled) { _, _ ->
                 questionIndex = 0
                 correctAnswers = 0
