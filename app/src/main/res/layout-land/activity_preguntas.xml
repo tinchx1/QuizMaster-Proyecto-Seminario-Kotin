@@ -1,106 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_preguntas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-             android:layout_marginTop="24dp"
-    android:columnCount="2"
-    android:stretchColumns="*">
+    android:baselineAligned="false">
 
-    <TableRow android:layout_marginTop="24dp">
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/linear_funcionalidades"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:gravity="center_horizontal">
 
             <LinearLayout
-                android:id="@+id/linear_funcionalidades"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <TextView
-                        android:id="@+id/puntaje"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="30sp" />
-
-                    <TextView
-                        android:id="@+id/barra"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="/"
-                        android:textSize="30sp" />
-
-                    <TextView
-                        android:id="@+id/num_preguntas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="30sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/comodín"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:clickable="true"
-                    android:contentDescription="@string/comodín_descripción"
-                    android:focusable="true"
-                    android:onClick="handleComodin"
-                    android:src="@drawable/joker_icon" />
-
                 <TextView
+                    android:id="@+id/puntaje"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30s"
                     android:textSize="30sp" />
 
+                <TextView
+                    android:id="@+id/barra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/num_preguntas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp" />
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/comodín"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:contentDescription="@string/comodín_descripción"
+                android:focusable="true"
+                android:onClick="handleComodin"
+                android:src="@drawable/joker_icon" />
+
             <TextView
-                android:id="@+id/texto_pregunta"
-                android:layout_width="match_parent"
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center"
-                android:paddingHorizontal="24dp"
-                android:text="¿Pregunta?"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_opciones"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="16dp">
-
-            <Button
-                android:id="@+id/opción1"
-                style="@style/Opción" />
-
-            <Button
-                android:id="@+id/opción2"
-                style="@style/Opción" />
-
-            <Button
-                android:id="@+id/opción3"
-                style="@style/Opción" />
-
-            <Button
-                android:id="@+id/opción4"
-                style="@style/Opción" />
+                android:text="30s"
+                android:textSize="30sp" />
 
         </LinearLayout>
 
-    </TableRow>
+        <TextView
+            android:id="@+id/texto_pregunta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingHorizontal="24dp"
+            android:text="¿Pregunta?"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:id="@+id/linear_opciones"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp">
 
-</TableLayout>
+        <Button
+            android:id="@+id/opción1"
+            style="@style/Opción" />
+
+        <Button
+            android:id="@+id/opción2"
+            style="@style/Opción" />
+
+        <Button
+            android:id="@+id/opción3"
+            style="@style/Opción" />
+
+        <Button
+            android:id="@+id/opción4"
+            style="@style/Opción" />
+    </LinearLayout>
+</LinearLayout>
