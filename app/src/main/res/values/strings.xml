@@ -27,6 +27,10 @@
     <string name="aceptar">Aceptar</string>
     <string name="fin_del_juego">Fin del juego</string>
     <string name="jugar_esta_categoría_de_nuevo">¿Jugar esta categoría de nuevo?\nClick en reiniciar!</string>
+    <string name="seconds">%1$d seg.</string>
+    <string name="help">Ayuda</string>
+    <string name="ranking">Clasificación</string>
+    <string name="las_mejores_partidas">Las mejores partidas</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">Respondiste %1$d pregunta correcta de %2$d en total.</item>
         <item quantity="other">Respondiste %1$d preguntas correctas de %2$d en total.</item>

@@ -30,4 +30,8 @@
     <string name="aceptar">Accept</string>
     <string name="fin_del_juego">Game over</string>
     <string name="jugar_esta_categoría_de_nuevo">Play this category again?\nClick restart!</string>
+    <string name="seconds">%1$d sec.</string>
+    <string name="help">Help</string>
+    <string name="ranking">Ranking</string>
+    <string name="las_mejores_partidas">Best matches</string>
 </resources>
