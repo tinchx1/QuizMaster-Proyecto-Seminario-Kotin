@@ -22,9 +22,19 @@ class MainActivity : AppCompatActivity() {
         UserManager.sharedPreferences = getSharedPreferences("Ranking", MODE_PRIVATE)
     }
 
-        UserManager.sharedPreferences = getSharedPreferences("Users", MODE_PRIVATE)
+    override fun onResume() {
+        super.onResume()
+        if (userName.isBlank()) createUsernameDialog()
+    }
 
-        createUsernameDialog()
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("userName", userName)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        userName = savedInstanceState.getString("userName")!!
     }
 
     private fun createUsernameDialog() {
