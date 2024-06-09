@@ -15,30 +15,24 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/puntaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center">
+                android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/puntaje"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="30sp" />
+            <TextView
+                android:id="@+id/barra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/barra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="/"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/num_preguntas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="30sp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/num_preguntas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp" />
 
             <ImageView
                 android:id="@+id/comodín"
