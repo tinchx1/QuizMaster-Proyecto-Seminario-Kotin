@@ -26,8 +26,9 @@ class Preguntas : AppCompatActivity() {
     private var correctAnswers = 0
     private lateinit var currentUser: User // Nunca debería ser null
     private var timer: CountDownTimer? = null
-    private var timeLeft: Long = 31000
+    private var timeLeft: Long = 30000
     private var isPaused = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preguntas)
@@ -54,6 +55,7 @@ class Preguntas : AppCompatActivity() {
             answeredQuestions = it.getInt("answeredQuestions")
             correctAnswers = it.getInt("correctAnswers")
             comodin.isEnabled = it.getBoolean("comodínState")
+            timeLeft = it.getLong("timeLeft")
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
@@ -97,6 +99,7 @@ class Preguntas : AppCompatActivity() {
             putInt("answeredQuestions", answeredQuestions)
             putInt("correctAnswers", correctAnswers)
             putBoolean("comodínState", comodin.isEnabled)
+            putLong("timeLeft", timeLeft)
         }
     }
 
@@ -126,19 +129,24 @@ class Preguntas : AppCompatActivity() {
             button.text = q.options[index]
             button.isClickable = true
         }
-        if (!isPaused) {
-            timeLeft = 31000
-        }
+        comodin.isClickable = true
         timer?.cancel()
         timer = object : CountDownTimer(timeLeft, 1000) {
+            val timer = findViewById<TextView>(R.id.timer)
+            fun remaining(millis: Long): String =
+                getString(R.string.seconds, (millis / 1000 + 1))
             override fun onTick(millisUntilFinished: Long) {
                 timeLeft = millisUntilFinished
-                findViewById<TextView>(R.id.timer).text = "${millisUntilFinished / 1000}s"
+                timer.text = remaining(millisUntilFinished)
+                // ... Último tick: millisUntilFinished = 0 * 1000
             }
 
             override fun onFinish() {
-                findViewById<TextView>(R.id.timer).text = "0s"
+                // ... Entonces, luego del último tick, millis, en teoría,
+                // sería -1 * 1000
+                timer.text = remaining(-1000)
                 handleIncorrectAnswer()
+                timeLeft = 30000
             }
         }.start()
     }
@@ -183,6 +191,9 @@ class Preguntas : AppCompatActivity() {
         }
     }
 
+    /**
+     * Callback para los botones de opción
+     */
     private fun answer(button: Button) {
         timer?.cancel()
         val correctButton = options[questions[questionIndex].correctAnswerIndex]
@@ -212,8 +223,6 @@ class Preguntas : AppCompatActivity() {
             if (!correct)
                 correctButton.backgroundTintList = null
             nextOrFinish()
-            options.forEach { it.isClickable = true }
-            comodin.isClickable = true
         }, 3000)
 
     }
