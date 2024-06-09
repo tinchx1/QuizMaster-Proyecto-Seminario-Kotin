@@ -10,10 +10,10 @@
         such as History, Science, Entertainment, Sports, and more. Select one and a questions round will begin.\n\n
         2. Answer the questions:\n- Each category contains a set of questions.\n- Read each one carefully and select
         from the provided possible answers the one you think is correct.\n\n
-        3. Use your wild card:\n- If you encounter a hard question or simply don\'t know the answer to it, you can use
+        3. Use your wild card:\n- If you encounter a hard question or simply don’t know the answer to it, you can use
         a wild card.\n- The wild card allows you to change the current question by a different one from the same
         category.\n- You have only one wild card per category, so use it wisely.\n\n
-        4. Win points and move forward:\n- For every correct answer, you\'ll win points that get accumulated for the
+        4. Win points and move forward:\n- For every correct answer, you’ll win points that get accumulated for the
         entire game.\n- Try to answer to every question correctly to get the maximum possible points and be the best
         QuizMaster.
     </string>
@@ -25,7 +25,7 @@
     <string name="message_alertdialog_name">Please, enter your name to start the game</string>
     <string name="how_to_play_title">How to play:</string>
     <string name="comodín_utilizado">You have used your wild card.</string>
-    <string name="comodín_no_utilizado">You haven\'t used your wild card.</string>
+    <string name="comodín_no_utilizado">You haven’t used your wild card.</string>
     <string name="reiniciar">Restart</string>
     <string name="aceptar">Accept</string>
     <string name="fin_del_juego">Game over</string>
@@ -34,4 +34,7 @@
     <string name="help">Help</string>
     <string name="ranking">Ranking</string>
     <string name="las_mejores_partidas">Best matches</string>
+    <string name="quedaste_top_5">You’re in the top 5! Share your achievement with your friends.</string>
+    <string name="preguntas_correctas">%1$d - %2$s: %3$d correct answers</string>
+    <string name="clasificación">Clasificación</string>
 </resources>

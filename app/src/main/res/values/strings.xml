@@ -31,6 +31,9 @@
     <string name="help">Ayuda</string>
     <string name="ranking">Clasificación</string>
     <string name="las_mejores_partidas">Las mejores partidas</string>
+    <string name="quedaste_top_5">¡Quedaste en el top 5! Comparte tu logro con tus amigos.</string>
+    <string name="preguntas_correctas">%1$d - %2$s: %3$d preguntas correctas</string>
+    <string name="clasificación">Clasificación</string>
     <plurals name="mensaje_respuestas_correctas">
         <item quantity="one">Respondiste %1$d pregunta correcta de %2$d en total.</item>
         <item quantity="other">Respondiste %1$d preguntas correctas de %2$d en total.</item>

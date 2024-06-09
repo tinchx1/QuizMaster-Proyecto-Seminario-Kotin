@@ -33,8 +33,8 @@ class Preguntas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preguntas)
 
-        currentUser = UserManager.get(intent.getStringExtra("userName")!!)
-        val category = intent.getStringExtra("category")!!
+        currentUser = UserManager.get(intent.getStringExtra("userName") ?: return)
+        val category = intent.getStringExtra("category") ?: return
         setTitle("${currentUser.name}   $category")
         options = arrayOf(
             findViewById(R.id.opción1),
@@ -75,7 +75,7 @@ class Preguntas : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_preguntas, menu)
+        menuInflater.inflate(R.menu.base, menu)
         return true
     }
 
@@ -179,7 +179,9 @@ class Preguntas : AppCompatActivity() {
             timeLeft = 30000
             askQuestion(questions[questionIndex])
         } else {
-            GameOverDialogFragment(correctAnswers, answeredQuestions, !comodin.isEnabled) { _, _ ->
+            currentUser.change(correctAnswers)
+            UserManager.commit(currentUser)
+            GameOverDialogFragment(currentUser.name, correctAnswers, answeredQuestions, !comodin.isEnabled) { _, _ ->
                 questionIndex = 0
                 correctAnswers = 0
                 answeredQuestions = 0
@@ -187,8 +189,6 @@ class Preguntas : AppCompatActivity() {
                 comodin.alpha = 1f
                 onStart()
             }.show(supportFragmentManager, "GameOverDialog")
-            currentUser.change(correctAnswers, answeredQuestions)
-            UserManager.commit(currentUser)
         }
     }
 

@@ -3,12 +3,11 @@ package ar.unlp.quizmaster
 import org.json.JSONObject
 
 class Question(jsonObject: JSONObject) {
-    val questionText: String
+    val questionText: String = jsonObject.getString("question")
     val correctAnswerIndex: Int
     val options: Array<String>
 
     init {
-        questionText = jsonObject.getString("question")
         correctAnswerIndex = jsonObject.getInt("correctAnswerIndex")
         val questionsArray = jsonObject.getJSONArray("options")
         options = Array(4) { i ->
@@ -16,7 +15,7 @@ class Question(jsonObject: JSONObject) {
         }
     }
 
-    public fun isCorrect(str: String): Boolean {
+    fun isCorrect(str: String): Boolean {
         return str == options[correctAnswerIndex] // equals
     }
 }

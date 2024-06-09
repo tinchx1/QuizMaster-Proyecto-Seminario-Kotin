@@ -3,12 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/ranking"
-        android:title="ranking"
+        android:title="@string/ranking"
         android:icon="@drawable/ranking_icon"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/help"
-        android:icon="@drawable/sharp_help_24"
-        android:title="help"
-        app:showAsAction="always" />
 </menu>

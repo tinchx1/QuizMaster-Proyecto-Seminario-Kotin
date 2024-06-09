@@ -27,4 +27,12 @@ object UserManager {
         val json = sharedPreferences.getString(userName, null)
         return gson.fromJson(json, User::class.java)
     }
+
+    fun topUsers(): List<User> {
+        return sharedPreferences.all.values
+            .map { gson.fromJson(it.toString(), User::class.java) }
+            .filter { it.correct > 0 }
+            .sortedByDescending { it.correct }
+            .take(5)
+    }
 }

@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        userName = savedInstanceState.getString("userName")!!
+        userName = (savedInstanceState.getString("userName") ?: return)
     }
 
     private fun createUsernameDialog() {
@@ -84,7 +84,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
+        menuInflater.inflate(R.menu.ranking, menu)
+        menuInflater.inflate(R.menu.base, menu)
         return true
     }
 
