@@ -11,8 +11,10 @@ data class User(val name: String) {
      * @param answered Respuestas nuevas
      * @return El usuario con los nuevos valores
      */
-    fun increment(correct: Int, answered: Int) {
-        this.correct += correct
-        this.answered += answered
+    fun change(correct: Int, answered: Int) {
+        if (correct > this.correct) {
+            this.correct = correct
+            this.answered = answered
+        }
     }
 }

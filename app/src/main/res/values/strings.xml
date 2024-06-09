@@ -35,4 +35,12 @@
         <item quantity="one">Respondiste %1$d pregunta correcta de %2$d en total.</item>
         <item quantity="other">Respondiste %1$d preguntas correctas de %2$d en total.</item>
     </plurals>
+    <string-array name="ranking_items">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
 </resources>

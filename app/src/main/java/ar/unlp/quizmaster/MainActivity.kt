@@ -2,6 +2,7 @@ package ar.unlp.quizmaster
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputFilter
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
             isSingleLine = true
+            filters = arrayOf(InputFilter.LengthFilter(8))
         }
 
         val linearLayout = LinearLayout(this).apply {
@@ -68,7 +70,9 @@ class MainActivity : AppCompatActivity() {
             .create()
 
         editText.doAfterTextChanged { text ->
-            text?.let { alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = it.isNotBlank() }
+            text?.let {
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = it.isNotBlank()
+            }
         }
 
         alertDialog.show()
@@ -87,6 +91,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.help) {
             val i = Intent(this, Help::class.java)
+            startActivity(i)
+            return true
+        }
+        if (item.itemId == R.id.ranking) {
+            val i = Intent(this, Ranking::class.java)
             startActivity(i)
             return true
         }

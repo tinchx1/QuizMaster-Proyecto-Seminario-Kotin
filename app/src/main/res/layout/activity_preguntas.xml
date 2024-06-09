@@ -60,7 +60,7 @@
         android:paddingHorizontal="24dp"
         android:paddingBottom="16dp"
         android:text="¿Pregunta?"
-        android:textSize="30sp" />
+        android:textSize="28sp" />
 
     <LinearLayout
         android:id="@+id/linear_opciones"
