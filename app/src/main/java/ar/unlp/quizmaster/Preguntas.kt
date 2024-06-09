@@ -206,6 +206,8 @@ class Preguntas : AppCompatActivity() {
         options.forEach { it.isClickable = false }
         comodin.isClickable = false
 
+        val previousColorStateList = button.backgroundTintList
+
         val correct = questions[questionIndex].isCorrect(button.text.toString())
         if (correct) {
             val correctColorStateList = ColorStateList.valueOf(getColor(R.color.correct))
@@ -220,9 +222,9 @@ class Preguntas : AppCompatActivity() {
         }
         Handler(Looper.getMainLooper()).postDelayed({
             // Restaurar colores
-            button.backgroundTintList = null
+            button.backgroundTintList = previousColorStateList
             if (!correct)
-                correctButton.backgroundTintList = null
+                correctButton.backgroundTintList = previousColorStateList
             nextOrFinish()
         }, 3000)
 
