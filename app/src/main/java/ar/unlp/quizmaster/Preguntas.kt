@@ -146,7 +146,6 @@ class Preguntas : AppCompatActivity() {
                 // sería -1 * 1000
                 timer.text = remaining(-1000)
                 handleIncorrectAnswer()
-                timeLeft = 30000
             }
         }.start()
     }
@@ -176,6 +175,7 @@ class Preguntas : AppCompatActivity() {
     private fun nextOrFinish() {
         questionIndex++
         if (questionIndex < questions.size) {
+            timeLeft = 30000
             askQuestion(questions[questionIndex])
         } else {
             GameOverDialogFragment(correctAnswers, answeredQuestions, !comodin.isEnabled) { _, _ ->
