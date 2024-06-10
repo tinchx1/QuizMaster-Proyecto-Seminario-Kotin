@@ -7,11 +7,16 @@ object UserManager {
     lateinit var sharedPreferences: SharedPreferences
     private val gson = Gson()
 
-    fun commit(user: User) {
+    /**
+     * @return Si el usuario superó su propio puntaje
+     */
+    fun commit(user: User): Boolean {
+        val better = sharedPreferences.contains(user.name) && user.correct > get(user.name).correct
         val json = gson.toJson(user)
         val editor = sharedPreferences.edit()
         editor?.putString(user.name, json)
         editor?.apply()
+        return better
     }
 
     fun add(userName: String) {

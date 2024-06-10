@@ -12,6 +12,7 @@ class GameOverDialogFragment(
     private val correct: Int,
     private val answered: Int,
     private val comodinUsed: Boolean,
+    private val betterScore: Boolean,
     private val restart: OnClickListener
 ) : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -32,16 +33,21 @@ class GameOverDialogFragment(
             if (comodinUsed) getString(R.string.comodín_utilizado)
             else getString(R.string.comodín_no_utilizado)
 
+        val topFiveText: String = if (inTop) {
+            getString(
+                R.string.comparte_tu_logro_con_tus_amigos,
+                if (betterScore) getString(R.string.puntaje_superado)
+                else getString(R.string.quedaste_en_el_top_5)
+            )
+        } else ""
+
         val askRestartCategory = getString(R.string.jugar_esta_categoría_de_nuevo)
 
         val context = requireContext()
         val builder = AlertDialog.Builder(context)
             .setTitle(getString(R.string.fin_del_juego))
             .setMessage(
-                "$correctText\n\n$comodinUsedText\n\n${
-                    if (inTop) "${getString(R.string.quedaste_top_5)}\n\n"
-                    else ""
-                }$askRestartCategory"
+                "$correctText\n\n$comodinUsedText\n\n$topFiveText$askRestartCategory"
             )
             .setPositiveButton(getString(R.string.reiniciar), restart)
             .setNegativeButton(getString(R.string.aceptar)) { _, _ ->

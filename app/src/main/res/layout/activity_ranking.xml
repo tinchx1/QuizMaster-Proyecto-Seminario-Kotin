@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/clasificación"
+        android:text="@string/ranking"
         android:textSize="34sp"
         android:gravity="center_horizontal" />
 

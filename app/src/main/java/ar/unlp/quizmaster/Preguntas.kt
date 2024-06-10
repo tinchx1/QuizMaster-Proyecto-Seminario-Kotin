@@ -180,8 +180,8 @@ class Preguntas : AppCompatActivity() {
             askQuestion(questions[questionIndex])
         } else {
             currentUser.change(correctAnswers)
-            UserManager.commit(currentUser)
-            GameOverDialogFragment(currentUser.name, correctAnswers, answeredQuestions, !comodin.isEnabled) { _, _ ->
+            val superado = UserManager.commit(currentUser)
+            GameOverDialogFragment(currentUser.name, correctAnswers, answeredQuestions, !comodin.isEnabled, superado) { _, _ ->
                 questionIndex = 0
                 correctAnswers = 0
                 answeredQuestions = 0
