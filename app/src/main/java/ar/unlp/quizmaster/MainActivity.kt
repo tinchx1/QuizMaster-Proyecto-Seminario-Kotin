@@ -65,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(false)
             .setPositiveButton(getString(R.string.aceptar)) { _, _ ->
                 userName = editText.text.trim().toString()
-                UserManager.add(userName)
             }
             .create()
 
