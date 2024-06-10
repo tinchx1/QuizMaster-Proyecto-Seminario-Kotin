@@ -34,7 +34,10 @@
     <string name="help">Help</string>
     <string name="ranking">Ranking</string>
     <string name="las_mejores_partidas">Best matches</string>
-    <string name="preguntas_correctas">%1$d - %2$s: %3$d correct answers</string>
+    <plurals name="preguntas_correctas">
+        <item quantity="one">%1$d - %2$s: %3$d correct answer</item>
+        <item quantity="other">%1$d - %2$s: %3$d correct answers</item>
+    </plurals>
     <string name="comparte_tu_logro_con_tus_amigos">%1$s Share your achievement with your friends.\n\n</string>
     <string name="puntaje_superado">You have a new best score, and stayed in the top 5!</string>
     <string name="quedaste_en_el_top_5">You’re in the top 5!</string>

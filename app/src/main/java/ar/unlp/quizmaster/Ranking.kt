@@ -17,7 +17,7 @@ class Ranking : AppCompatActivity() {
         val listView: ListView = findViewById(R.id.ranking_list)
         val topRankingItemsNames =
             topRankingItems.mapIndexed { i, user ->
-                getString(R.string.preguntas_correctas, i + 1, user.name, user.correct)
+                resources.getQuantityString(R.plurals.preguntas_correctas, user.correct, i + 1, user.name, user.correct)
             }
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, topRankingItemsNames)
         listView.adapter = adapter

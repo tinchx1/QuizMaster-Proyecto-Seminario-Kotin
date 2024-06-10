@@ -59,7 +59,7 @@ class GameOverDialogFragment(
         if (inTop)
             builder.setNeutralButton("Compartir") { _, _ ->
                 val rankingText = top.mapIndexed { index, user ->
-                    getString(R.string.preguntas_correctas, index + 1, user.name, user.correct)
+                    resources.getQuantityString(R.plurals.preguntas_correctas, user.correct, index + 1, user.name, user.correct)
                 }.joinToString(separator = "\n")
                 val i = Intent().apply {
                     action = Intent.ACTION_SEND
