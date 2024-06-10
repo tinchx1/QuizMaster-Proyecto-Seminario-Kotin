@@ -20,9 +20,8 @@ object UserManager {
     }
 
     fun get(userName: String): User {
-        assert(sharedPreferences.contains(userName))
         val json = sharedPreferences.getString(userName, null)
-        return gson.fromJson(json, User::class.java)
+        return gson.fromJson(json, User::class.java) ?: User(userName)
     }
 
     fun topUsers(): List<User> {
